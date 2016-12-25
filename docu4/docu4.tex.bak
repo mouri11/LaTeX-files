@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+
+\begin{document}
+
+\tableofcontents
+
+\title{Text formatting in \LaTeX \ Documents}
+\author{Rohit Das}
+\date{\today}
+\maketitle
+
+This will be produce \textit{italicized} text.
+
+This will produce \textbf{bold-faced} text.
+
+This will produce \textsc{small caps} text.
+
+This will produce \texttt{typewriter} font.
+
+Please excuse my \begin{tiny}
+dear Aunt Sally.
+\end{tiny}
+
+Please excuse my \begin{small}
+dear Aunt Sally.
+\end{small}
+
+Please excuse my \begin{large}
+dear Aunt Sally.
+\end{large}
+
+Please excuse my \begin{Large}
+dear Aunt Sally.
+\end{Large}
+
+Please excuse my \begin{huge}
+dear Aunt Sally.
+\end{huge}
+
+Please excuse my \begin{Huge}
+dear Aunt Sally.
+\end{Huge}
+
+\begin{center}
+This is centered text.
+\end{center}
+
+\begin{flushleft}
+This is left-aligned text.
+\end{flushleft}
+
+\begin{flushright}
+This is right-aligned text.
+\end{flushright}
+
+\section{Linear Functions}
+	%\subsection{Slope-Intercept form}
+	%The slope-intercept form of a linear equation is given by $y=mx+c$	
+	%\subsection{Standard Form}
+	%\subsection{Point-Slope form}
+
+\section{Quadratic Functions}
+	%\subsection{Vertex form}
+	%\subsection{Standard form}
+	%\subsection{Factored form}
+\end{document}

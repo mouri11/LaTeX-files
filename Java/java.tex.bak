@@ -1,0 +1,1435 @@
+\documentclass[a4paper,11pt]{article}
+
+\renewcommand\thesection{\arabic{section}.}
+
+\usepackage{tocloft}
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+\setcounter{tocdepth}{2}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{fullpage}
+
+\usepackage{float}
+
+\usepackage{amsfonts}
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{14}{15}\selectfont}
+
+\usepackage{graphicx}
+\usepackage[margin=0.6in,includefoot,headsep=0.1in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\rfoot{P. T. O.}
+\lfoot{ROHIT DAS 30000114022}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+%\usepackage{array}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\lstset { %
+    language=Java,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\large,% basic font setting
+}
+
+\begin{document}
+\title{\textbf{\Huge Maulana Abul Kalam Azad University of\\[10pt] Technology}}
+\date{\vspace{-5ex}}
+\maketitle
+\begin{center}
+\textbf{\LARGE{(Java Assignment)}}
+\end{center}
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/makaut.jpg}
+\end{figure}
+.
+\begin{flushright}
+\underline{\textbf{\author{\Huge Rohit Das}}}\\
+\textbf{\LARGE{
+B. Tech(CSE),5th Year\\
+Roll No.: 30000114022\\
+Regn. No.: 143000110023\\
+Taught by: Prof. Kaushik Majumdar/ Prof. Debashis De\\
+}}
+\end{flushright}
+%\tableofcontents
+%\begin{table}[htbp]
+%\centering
+.
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\begin{center}
+\LARGE\textbf{\underline{INDEX}}
+\end{center}
+
+\begin{tabular}{|c|p{0.48\linewidth}|c|c|c|}
+\textbf{Sl. No.}&\textbf{Particulars}&\textbf{Date}&\textbf{Page No.}&\textbf{Signature}\\[5pt] \hline
+\\1.&Program to calculate average of cricket players.& 28/9/16 & 3 &\\ \hline
+\\2.&Program to calculate cost for consumer.& 28/9/16 & 4 &\\ \hline
+\\3.&Program to display votes received in election.& 28/9/16 & 5 &\\ \hline
+\\4.&Program for operation on array elements.& 19/10/16 & 6 &\\ \hline
+\\5.&Program to calculate factorial of a number.& 19/10/16 & 7 &\\ \hline
+\\6.&Program to calculate sum of series$1+22+32+42+...$.& 19/10/16 & 7 &\\ \hline
+\\7.&Program to add values of Complex no. objects.& 9/11/16 & 8 &\\ \hline
+\\8.&Program to convert distances to inches and add.& 28/9/16 & 9 &\\ \hline
+\\9.&Program for String class with different costructors.& 9/11/16 & 10 &\\ \hline
+\\10.&Program to display unique roll of Student objects.& 9/11/16 & 10 &\\ \hline
+11.&Program to swap values of objects using 'friend' function.& 9/11/16 & 11 &\\ \hline
+\\12.&Program for operation on matrices.& 16/11/16 & 12 &\\ \hline
+13.&Program to use overloaded operators on float numbers.& 16/11/16 & 14 &\\ \hline
+\\14.&Program to compare two strings by '==' operator.& 16/11/16 & 15 &\\ \hline
+\\15.&Program to implement current and savings a/c.& 23/11/16 & 16 &\\ \hline
+\\16.&Previous program rewritten using constructors.& 23/11/16 & 18 &\\ \hline
+\\17.&Program for an educational institution.& 23/11/16 & 20 &\\ \hline
+\\18.&Program to implement a network.& 23/11/16 & 23 &\\ \hline
+\\19.&Program to show overriding using 'virtual'.& 30/11/16 & 24 &\\ \hline
+\\20.&Program to implement Shape class using 'virtual'.& 30/11/16 & 25 &\\ \hline
+\\21.&Previous program rewritten without using 'virtual'.& 30/11/16 & 26 &\\ \hline
+\\22.&Program to use template for an array.& 7/12/16 & 27 &\\ \hline
+23.&Program to implement exception handling with multiple catch.& 7/12/16 & 28 &\\ \hline
+\\24.&Program to implement rethrowing an exception.& 7/12/16 & 29 &\\ \hline
+\\25.&Program to implement a generic vector.& 27/12/16 & 29 &\\ \hline
+\end{tabular}
+%\end{table}
+
+\section{Write a program to print the patterns below:\\
+1. *   2.  * 3.* 4.* 5.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+class Patterns{
+	void pattern1(int n){
+		for(int i=1;i<=n;i++){
+			int j=1;
+			while(j<=i){
+				System.out.print(" * ");	j++;
+			}
+			System.out.println();
+		}
+	}
+	void pattern2(int n){
+		for(int i=1;i<=n;i++){
+			for(int j=n-i;j>=0;j--)System.out.print("   ");
+			for(int j=1;j<=i;j++)System.out.print(" * ");
+			for(int j=i;j<i;j++)System.out.print(" * ");
+			System.out.println();
+		}
+	}
+	void pattern3(int n){
+		for(int i=1;i<=n;i++){
+			for(int j=n-i;j>=0;j--)System.out.print("   ");
+			for(int j=1;j<=i;j++)System.out.print(" * ");
+			for(int j=1;j<i;j++)System.out.print(" * ");
+			System.out.println();
+		}
+	}
+	void pattern4(int n){	
+		for(int i=n;i>0;i--){
+			for(int j=n-i;j>=0;j--)System.out.print("   ");
+			for(int j=1;j<=i;j++)System.out.print(" * ");
+			for(int j=1;j<i;j++)System.out.print(" * ");	
+			System.out.println();
+		}
+	}
+	void pattern5(int n){
+		for(int i=n-1;i>0;i--){
+			for(int j=n-i-1;j>=0;j--)System.out.print(" * ");
+			for(int j=1;j<=i;j++)System.out.print("   ");
+			for(int j=1;j<i;j++)System.out.print("   ");
+			for(int j=n-i-1;j>=0;j--)System.out.print(" * ");
+			System.out.println();
+		}
+		for(int j=1;j<=(2*n-1);j++)System.out.print(" * ");
+		System.out.println();
+	}
+	public static void main(String[]args){
+		Patterns obj=new Patterns();
+		obj.pattern1(5);	obj.pattern2(5);
+		obj.pattern3(5);	obj.pattern5(5);
+		obj.pattern4(5);
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/9-27/Patterns.png}
+\end{figure}
+
+
+
+\section{Write a program to print all prime numbers between 1 and 100.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+class Prime{
+	boolean isPrime(int n){
+		int d=n/2;
+		if(n==0 || n==1)return false;
+		for(int i=2;i<=d;i++)	if(n%i==0)   return false;
+		return true;
+	}
+	public static void main(String[]args){
+		Prime obj=new Prime();
+		System.out.println("The prime nos are:");
+		for(int i=1;i<=100;i++)if(obj.isPrime(i))
+			System.out.print(i+" ");
+		System.out.println();
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=200pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/9-27/Prime.png}
+\end{figure}
+.
+
+
+\section{Write a program to print the reverse of a number.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+class Reverse{
+	int rev(int n){
+		int s=0;
+		while(n!=0){
+			int r=n%10;
+			s=s*10+r;
+			n/=10;
+		}
+		return s;
+	}
+	public static void main(String[]args){
+		Reverse obj=new Reverse();
+		System.out.println("The reverse of 1234567 is:");
+		System.out.println(obj.rev(1234567));
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/9-27/Reverse.png}
+\end{figure}
+.
+
+
+\section{Write a program to print the sum of digits of a number.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+class SumOfDigits{
+	int sum(int n){
+		int sum=0;
+		while(n!=0){
+			int r=n%10;
+			sum+=r;
+			n/=10;
+		}
+		return sum;
+	}
+	public static void main(String[]args){
+		SumOfDigits obj=new SumOfDigits();
+		System.out.println("The sum of digits for 1234567 is::");
+		System.out.println(obj.sum(1234567));
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/9-27/SumOfDigits.png}
+\end{figure}
+.
+
+
+\section{Write a program to calculate the area of a circle, square, rectangle and triangle using function overloading.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+import java.util.*;
+class Area1{
+	private float area(float l,float b){
+		return l*b;
+	}
+	private double area(double p,double base){
+		return ((1/2.0)*base*p);
+	}	
+	private double area(double r){
+		return (Math.PI*r*r);
+	}	
+	private float area(float a){
+		return a*a;
+	}
+	public static void main(String[]args){
+		Area1 obj=new Area1();
+		Scanner sc=new Scanner(System.in);
+		double p,base,r;
+		float l,b,a;
+		System.out.println("Enter sides of rectangle:");
+		l=sc.nextFloat();
+		b=sc.nextFloat();
+		System.out.println("Area of rectangle is "+
+		obj.area(l,b));
+		System.out.println("Enter base and height of triangle:");
+		p=sc.nextDouble();
+		base=sc.nextDouble();
+		System.out.println("Area of triangle is "+
+		obj.area(p,base));
+		System.out.println("Enter radius of circle:");
+		r=sc.nextDouble();
+		System.out.println("Area of circle is "+obj.area(r));
+		System.out.println("Enter side of square:");
+		a=sc.nextFloat();
+		System.out.println("Area of square is "+obj.area(a));
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/10-18/Area1.png}
+\end{figure}
+.
+
+
+\section{Write the previous program using constructor overloading.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+import java.util.*;
+class Area2{
+	static Scanner sc=new Scanner(System.in);
+	static double p,base,r;
+	static float l,b,a;
+	Area2(float l,float b){	this.l=l;  this.b=b; }
+	Area2(float a){	this.a=a; }
+	Area2(double p,double base){	this.p=p; this.base=base; }
+	Area2(double r){	this.r=r;	}
+	private double area1(){	return l*b;	}
+	private double area2(){	return a*a;	}
+	private double area3(){	return (1/2.0)*base*p;	}
+	private double area4(){	return Math.PI*r*r;	}
+	public static void main(String[]args){
+		System.out.println("Enter sides of rectangle:");
+		l=sc.nextFloat();	b=sc.nextFloat();
+		Area2 obj1=new Area2(l,b);
+		System.out.println("Area of rectangle is "+obj1.area1());
+		System.out.println("Enter sides of square:");
+		a=sc.nextFloat();
+		Area2 obj2=new Area2(a);
+		System.out.println("Area of square is "+obj2.area2());
+		System.out.println("Enter sides of triangle:");
+		p=sc.nextDouble();	base=sc.nextDouble();
+		Area2 obj3=new Area2(p,base);
+		System.out.println("Area of triangle is "+obj3.area3());
+		System.out.println("Enter radius of circle:");
+		r=sc.nextDouble();
+		Area2 obj4=new Area2(r);
+		System.out.println("Area of circle is "+obj4.area4());
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/10-18/Area2.png}
+\end{figure}
+.
+
+
+\section{Write a program to design a class representing a bank account. The class should have the following data members:\\$*$ a/c no.	$*$ customer id	$*$ balance amount\\The class should have member methods with the following functions:\\$*$  initialize initial value\\$*$  to deposit amount\\$*$  to withdraw amount\\$*$  to display customer id, a/c no. and current balance.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+import java.util.*;
+class Bank{
+	static Scanner sc=new Scanner(System.in);
+	static long acno;	static double amt;
+	static String id;
+	private void init(){  acno=0;	amt=0.0;  id="";  }
+	private double deposit(double d){  return amt+=d;  }
+	private double withdraw(double d)
+	{
+		if(d<amt&&amt!=0)return amt-=d;
+		else {
+		    System.out.println("Not Enough Balance!!");
+		    return amt;
+		}
+	}
+	private void print(){
+		System.out.println("Customer ID \t A/c No. \t Current 
+		Balance");
+		System.out.println(id+"\t \t "+acno+"\t \t "+amt);
+	}
+	public static void main(String[]args){
+		Bank obj=new Bank();
+		obj.init();
+		System.out.println("Enter account no and current balance
+		:");
+		id="3000114022";
+		acno=sc.nextLong();  amt=sc.nextDouble();
+		double d=0.0;	int choice=0;
+		do{
+			System.out.println("Main Menu");
+			System.out.println("0. Deposit");
+			System.out.println("1. Withdrawal");
+			System.out.println("2. Print Statement");
+			System.out.println("3. Exit");
+			System.out.println("Enter choice:");
+			choice=sc.nextInt();
+			switch(choice){
+			case 0:d=0.0;
+				System.out.println("Enter amount to 
+				deposit:");
+		       		d=sc.nextDouble();
+		       		System.out.println("The deposit is "+d+
+		       		". The current balance is "+
+			        (double)obj.deposit(d));
+				break;
+			case 1:d=0.0;
+				System.out.println("Enter amount to
+				 withdraw:");
+				d=sc.nextDouble();
+				System.out.println("The withdrawal is 
+				"+d+". The current balance is "+
+				(double)obj.withdraw(d));
+	  		        break;
+			case 2:obj.print();
+				break;
+			default:System.out.println("Thank you");
+				break;		
+			}
+		}while(choice<3);
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/10-18/Bank.png}
+\end{figure}
+.
+
+
+\section{Write a program to add two complex numbers. Print the result in $(x+iy)$ form. Use objects as arguments to a method which will perform the addition and use function overloading.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+class Complex{
+    double x;   int y;
+    Complex(double a,int b){
+    	x=a;	y=b;
+    }
+    void print(){  System.out.println(x+"+ i"+y);  }	
+}
+class Test
+{
+    double real;    int imag;
+    private double sum(double a,double b){
+        real=a+b;	   return real;
+    }
+    private int sum(int a,int b){
+    	imag=a+b;   return imag;
+    }
+    public static void main(String[]args){
+    	Complex obj=new Complex(4,6);
+    	obj.print();
+    	Complex obj1=new Complex(1,9);
+    	obj1.print();
+    	Test t1=new Test();
+	System.out.println("The sum is: "+t1.sum(obj.x,obj1.x)+"+ i"+
+	t1.sum(obj.y,obj1.y));
+    }
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/java_files/10-18/Complex.png}
+\end{figure}
+.
+
+\section{Write a program to design a class Student. The class should have the following data members:\\ $*$ name    $*$ roll		$*$ sub-marks	$*$ sports-marks	$*$ grades.\\The class should have the following functions:\\$*$ initialize values for data members,\\$*$ calculate total marks,\\$*$ display total marks\\$*$ display grade}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+import java.util.*;
+class Student
+{
+	private static String name;
+	private static long roll;
+	private static int submarks,sportsmarks;
+	private void init()
+	{
+		roll=submarks=sportsmarks=0;
+		name="";
+	}
+	private long total()
+	{
+		return submarks+sportsmarks;
+	}
+	private void print()
+	{
+		System.out.println("Subject Marks: "+submarks+" out of 50.");
+		System.out.println("Sports Marks: "+sportsmarks+" out of 50.");
+		System.out.println("Total Marks: "+(submarks+sportsmarks)+" out of 100.");
+	}
+	private char grade()
+	{
+		long total=submarks+sportsmarks;
+		if(total>90)return 'A';
+		else if(total<=90 && total >=80)return 'B';
+		else if(total<80 && total>=70)return 'C';
+		else return 'D';
+	}
+	public static void main(String[]args)
+	{
+		Scanner sc=new Scanner(System.in);
+		Student obj=new Student();
+		obj.init();
+		System.out.println("Enter name of student:");
+		name=sc.nextLine();
+		System.out.println("Enter roll no., subject marks(out of 50) and sports marks(out of 50):");
+		roll=sc.nextLong();
+		submarks=sc.nextInt();
+		sportsmarks=sc.nextInt();
+		System.out.println("The total is "+obj.total());
+		System.out.println("The grade of the student is: "+obj.grade());
+	}
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-9/string.png}
+\end{figure}
+.
+\section{Write a program to create a student class and create 10 objects and display the roll no. of the students. Use static data member and array to create objects. Do not use constructors.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+using namespace std;
+class Student{
+	int roll;
+	public:	
+		static int count;
+		Student(){}
+		void init(){	roll=++count;		}
+		void display(){	printf("%d ",roll);	}
+};
+int Student::count;
+int main(){
+	Student arr[10];
+	for(int i=0;i<10;i++){
+		int x=Student::count;
+		arr[i].init();
+	}
+	printf("The rolls are: \n");
+	for(int i=0;i<10;i++){
+		printf("Student %d: ",i);
+		arr[i].display();
+		printf("\n");
+	}
+	return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-9/student.png}
+\end{figure}
+.
+
+\section{Write a program to values of objects using 'friend' functions.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+using namespace std;
+class Swap
+{
+	int n;
+	public:	
+		Swap(){}
+		Swap(int n){	this->n=n;	}
+		void show(){	printf("%d \n",n);	}
+		friend void swap(Swap,Swap);
+};
+class Swap2{
+	public:
+		friend void swap(Swap a,Swap b){
+			Swap temp;
+			printf("\na=");	a.show();
+			printf("\nb=");	b.show();
+			printf("\nAfter swap:\n");
+			temp.n=a.n;  a.n=b.n;  b.n=temp.n;
+			printf("\na=");	a.show();
+			printf("\nb=");	b.show();
+		}
+	
+};
+int main(){
+	Swap a(10);	Swap b(20);
+	Swap2 s;	swap(a,b);
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-9/swap.png}
+\end{figure}
+.
+
+\section{Write a program to create a class Matrix of size m x n. Define all possible matrix operations for Matrix type objects.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+using namespace std;
+class Matrix{
+	int r,c;
+	public:
+	int a[100][100];
+	Matrix(){}
+	Matrix(int row,int col){	r=row;c=col;	}
+	Matrix operator+(Matrix);
+	Matrix operator-(Matrix);
+	Matrix operator*(Matrix);
+	void input(void);
+	void display(void);
+};
+Matrix Matrix::operator+(Matrix c){
+	Matrix temp(2,2);
+	for(int i=0;i<c.r;i++){
+		for(int j=0;j<c.c;j++){
+			temp.a[i][j]=a[i][j]+c.a[i][j];	
+		}	
+	}
+	return (temp);
+}
+Matrix Matrix::operator-(Matrix c){
+	Matrix temp(2,2);
+	for(int i=0;i<c.r;i++){
+		for(int j=0;j<c.c;j++){
+			temp.a[i][j]=a[i][j]-c.a[i][j];	
+		}	
+	}
+	return (temp);
+}
+Matrix Matrix::operator*(Matrix c){
+	Matrix temp(2,2);
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c.c;j++){
+			for(int k=0;k<c.r;k++){
+				temp.a[i][j]=a[i][k]*c.a[k][j];
+			}
+		}	
+	}
+	return (temp);
+}
+void Matrix::input(void){
+	printf("Enter data for matrix(%d x %d):",r,c);
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++){
+			scanf("%d",&a[i][j]);
+		}
+	}
+}
+void Matrix::display(void){
+	printf("The data for matrix \n");
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++)printf("%d ",a[i][j]);
+		printf("\n");
+	}
+}
+int main(){
+	Matrix m1,m2,m3;
+	m1=Matrix(2,2);	m1.input();
+	m2=Matrix(2,2);	m2.input();
+	m3=m1+m2;
+	printf("Matrix 1=");	m1.display();
+	printf("Matrix 2=");	m2.display();
+	cout<<"Sum is:"<<endl;
+	printf("Matrix 3=");	m3.display();
+	m3=m1-m2;
+	cout<<"DIfference is:"<<endl;
+	printf("Matrix 3=");	m3.display();
+	m3=m1*m2;
+	cout<<"Product is:"<<endl;
+	printf("Matrix 3=");	m3.display();
+	return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-16/matrix.png}
+\end{figure}
+.
+
+\section{Write a program to create a class FLOAT that contains one float data member. Overload all the four arithmetic operators so that they operate on the objects of FLOAT.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+using namespace std;
+class Float{
+	float x;
+	public:
+		Float(){}
+		Float(float a){	x=a;	}
+		Float operator+(Float);
+		Float operator-(Float);
+		Float operator*(Float);
+		Float operator/(Float);
+		void display(void);
+};
+Float Float::operator+(Float c){	return Float(x+c.x);	}
+Float Float::operator-(Float c){	return Float(x-c.x);	}
+Float Float::operator*(Float c){	return Float(x*c.x);	}
+Float Float::operator/(Float c){	return Float(x/c.x);	}
+void Float::display(void){	printf("%f \n",x);	}
+int main(){
+	Float f1,f2,f3;
+	f1=Float(1.5);	f2=Float(2.5);
+	f3=f1+f2;
+	printf("f1=");	f1.display();
+	printf("f2=");	f2.display();
+	cout<<"Sum is:"<<endl;
+	printf("f3=");	f3.display();
+	cout<<"Difference is:"<<endl;
+	f3=f1-f2;
+	printf("f3=");	f3.display();
+	cout<<"Product is:"<<endl;
+	f3=f1*f2;	
+	printf("f3=");	f3.display();
+	cout<<"Quotient is:"<<endl;
+	f3=f1/f2;
+	printf("f3=");	f3.display();
+	return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-16/opload1.png}
+\end{figure}
+.
+
+\section{Write a program to compare two strings by overloading the '==' operator.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+using namespace std;
+class String{
+	string s;
+	public:
+	String(){	s="";	}
+	String(string _s){	s=_s;	}
+	string operator==(String);
+};
+string String::operator==(String str){
+	if(s==str.s)return "Equals\n";
+	else return "Not equals\n";
+}
+int main(){
+	String s1("Hello"),s2("Hola"),s3("Hello");
+	cout<<"Comparing Hello and Hola:"<<endl;
+	cout<<(s1==s2);
+	cout<<"Comparing Hello and Hello:"<<endl;
+	cout<<(s1==s3);
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-16/string.png}
+\end{figure}
+.
+
+\section{Write a program to create a class account that stores customer name, account number and type of account. Create two more classes for current a/c and savings a/c. The current a/c will have:\\$*$ cheque facility, \\$*$ minimum balance and deduction for balance below that,\\$*$ deposit and withdrawal. The saving a/c will have similar member methods, except for cheque and minimum balance, it will have an interest calculation. Do not use constructors.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+class Account{
+    string customer_name,acct_type;
+    ll acct;
+};
+class Cur_acct:public Account{
+    double balance,minBal;
+    public:
+	void setbal(double a,double b)	{
+	    balance=a;
+	    minBal=b;
+	}
+	void withdrawal(int n)	{
+	    if(balance<minBal)balance-=(balance*0.10);
+	    else if(n>balance)printf("Insufficient balance.\n");
+	    else balance-=n;
+	}
+	void deposit(int n){    balance+=n;	}
+	void cheque(){ cout<<"Deposited by cheque..."<<endl;	}
+	void show(){
+	    printf("Current balance=%.2f\n",balance);
+	}
+};
+class Sav_acct:public Account{
+    double balance;
+    public:
+	void setbal(double a){    balance=a;	}
+	void withdrawal(int n){
+	    if(n>balance)printf("Insufficient balance.\n");
+	    else balance-=n;
+	}
+	void deposit(int n){    balance+=n;	}
+	void interest(){    balance+=(balance*0.20);	}
+	void show(){
+	    printf("Current balance:%.2f\n",balance);
+	}
+};
+int main(){
+    cout<<"Enter type of account(s for savings, c for current):"<<endl;
+    char c;    cin>>c;
+    cout<<"Enter balance:"<<endl;
+    int bal;    cin>>bal;
+    if(c=='c'){
+		cout<<"Enter minimum balance:"<<endl;
+		int minbal;	cin>>minbal;
+		Cur_acct c1;
+		c1.setbal(bal,minbal);
+		cout<<"Enter amount to deposit:"<<endl;
+		int n;	cin>>n;
+		cout<<"Do you want to use cheque or cash?(c for cheque)..
+		"<<endl;
+		char c;	cin>>c;
+		if(c=='c')c1.cheque();
+		c1.deposit(n);	cout<<"Deposited: Rs."<<n<<"\n";
+		c1.show();
+		cout<<"Enter amount to withdraw:"<<endl;
+		cin>>n;	c1.withdrawal(n);
+		cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
+		cout<<"Enter amount to withdraw:"<<endl;
+		cin>>n;	c1.withdrawal(n);
+		cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
+   	 }
+    else{
+		Sav_acct s1;
+		s1.setbal(bal);
+		cout<<"Enter amount to deposit:"<<endl;
+		int n;	cin>>n;
+		s1.deposit(n);
+		cout<<"Deposited: Rs."<<n<<"\n";	s1.show();
+		cout<<"Enter amount to withdraw:"<<endl;
+        cin>>n;	s1.withdrawal(n);
+		cout<<"Withdrawal: Rs."<<n<<"\n";
+		s1.show();
+    	cout<<"Enter amount to withdraw:"<<endl;
+        cin>>n;	s1.withdrawal(n);
+		cout<<"Withdrawal: Rs."<<n<<"\n";	s1.show();
+		cout<<"Adding interest of 0.20 to current balance:"
+		<<endl;
+		s1.interest();	s1.show();
+    }
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank.png}
+\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank2.png}
+\end{figure}
+.
+
+\section{Rewrite the above program using constructors.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+using namespace std;
+class Account{
+    string customer_name,acct_type;
+    ll acct;
+    public:
+    Account(){}
+    Account(string a,string b,ll c){
+	customer_name=a;
+	acct_type=b;
+	acct=c;
+    }
+};
+class Cur_acct:public Account{
+    double balance,minBal;
+    public:
+	Cur_acct(double a,double b){
+	    balance=a;
+	    minBal=b;
+	}
+	void withdrawal(int n){
+	    if(balance<minBal)balance-=(balance*0.10);
+	    else if(n>balance)printf("Insufficient balance.\n");
+	    else balance-=n;
+	}
+	void deposit(int n){    balance+=n;	}
+	void cheque(){
+	    cout<<"Deposited by cheque..."<<endl;
+	}
+	void show(){
+	    printf("Current balance=%.2f\n",balance);
+	}
+};
+class Sav_acct:public Account
+{
+    double balance;
+    public:
+	Sav_acct(int a){    balance=a;	}
+	void withdrawal(int n){
+	    if(n>balance)printf("Insufficient balance.\n");
+	    else balance-=n;
+	}
+	void deposit(int n){    balance+=n;	}
+	void interest(){    balance+=(balance*0.20);	}
+	void show(){
+	    printf("Current balance:%.2f\n",balance);
+	}
+};
+int main(){
+    cout<<"Enter type of account(s for savings, c for current):"<<endl;
+    char c;    cin>>c;
+    cout<<"Enter balance:"<<endl;
+    int bal;    cin>>bal;
+    if(c=='c'){
+	cout<<"Enter minimum balance:"<<endl;
+	int minbal;	cin>>minbal;
+	Cur_acct c1(bal,minbal);
+	cout<<"Enter amount to deposit:"<<endl;
+	int n;	cin>>n;
+	cout<<"Do you want to use cheque or cash?(c for cheque).."<<endl;
+	char c;	cin>>c;
+	if(c=='c')c1.cheque();
+	c1.deposit(n);
+	cout<<"Deposited: Rs."<<n<<"\n";	c1.show();
+	cout<<"Enter amount to withdraw:"<<endl;
+	cin>>n;	c1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";
+	c1.show();
+	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
+	c1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
+    }
+    else{
+	Sav_acct s1(bal);
+	cout<<"Enter amount to deposit:"<<endl;
+	int n;	cin>>n;
+	s1.deposit(n);
+	cout<<"Deposited: Rs."<<n<<"\n";	s1.show();
+	cout<<"Enter amount to withdraw:"<<endl;
+    cin>>n;	s1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";
+	s1.show();
+	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
+	s1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";	s1.show();	
+	cout<<"Adding interest of 0.20 to current balance:"<<endl;
+	s1.interest();	s1.show();
+    }
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank.png}
+\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank2.png}
+\end{figure}
+.
+
+\section{ An educational institution wishes to maintain a database of its employees. The database is divided into a number of classes whose hierarchical relationships are shown in figure below. The figure also shows the minimum information required for each class. Specify all the classes and define functions to create the database and retrieve individual information as and when required.}
+\begin{figure}[H]
+\centering
+\includegraphics[width=220pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/educate.png}
+\end{figure}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+using namespace std;
+class Account{
+    string customer_name,acct_type;
+    ll acct;
+    public:
+    Account(){}
+    Account(string a,string b,ll c){
+	customer_name=a;
+	acct_type=b;
+	acct=c;
+    }
+};
+class Cur_acct:public Account{
+    double balance,minBal;
+    public:
+	Cur_acct(double a,double b){
+	    balance=a;
+	    minBal=b;
+	}
+	void withdrawal(int n){
+	    if(balance<minBal)balance-=(balance*0.10);
+	    else if(n>balance)printf("Insufficient balance.\n");
+	    else balance-=n;
+	}
+	void deposit(int n){    balance+=n;	}
+	void cheque(){
+	    cout<<"Deposited by cheque..."<<endl;
+	}
+	void show(){
+	    printf("Current balance=%.2f\n",balance);
+	}
+};
+class Sav_acct:public Account
+{
+    double balance;
+    public:
+	Sav_acct(int a){    balance=a;	}
+	void withdrawal(int n){
+	    if(n>balance)printf("Insufficient balance.\n");
+	    else balance-=n;
+	}
+	void deposit(int n){    balance+=n;	}
+	void interest(){    balance+=(balance*0.20);	}
+	void show(){
+	    printf("Current balance:%.2f\n",balance);
+	}
+};
+int main(){
+    cout<<"Enter type of account(s for savings, c for current):"<<endl;
+    char c;    cin>>c;
+    cout<<"Enter balance:"<<endl;
+    int bal;    cin>>bal;
+    if(c=='c'){
+	cout<<"Enter minimum balance:"<<endl;
+	int minbal;	cin>>minbal;
+	Cur_acct c1(bal,minbal);
+	cout<<"Enter amount to deposit:"<<endl;
+	int n;	cin>>n;
+	cout<<"Do you want to use cheque or cash?(c for cheque).."<<endl;
+	char c;	cin>>c;
+	if(c=='c')c1.cheque();
+	c1.deposit(n);
+	cout<<"Deposited: Rs."<<n<<"\n";	c1.show();
+	cout<<"Enter amount to withdraw:"<<endl;
+	cin>>n;	c1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";
+	c1.show();
+	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
+	c1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
+    }
+    else{
+	Sav_acct s1(bal);
+	cout<<"Enter amount to deposit:"<<endl;
+	int n;	cin>>n;
+	s1.deposit(n);
+	cout<<"Deposited: Rs."<<n<<"\n";	s1.show();
+	cout<<"Enter amount to withdraw:"<<endl;
+    cin>>n;	s1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";
+	s1.show();
+	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
+	s1.withdrawal(n);
+	cout<<"Withdrawal: Rs."<<n<<"\n";	s1.show();	
+	cout<<"Adding interest of 0.20 to current balance:"<<endl;
+	s1.interest();	s1.show();
+    }
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/educate.png}
+\end{figure}
+.
+
+\section{Consider a class network as shown below. Define all four classes and write a program to create, update and display the information contained in master objects.}
+\begin{figure}[H]
+\centering
+\includegraphics[width=240pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/network.png}
+\end{figure}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+class Person{
+    public:
+    string name,code;
+    void init(string a,string b){
+	name=a;	code=b;
+    }
+    virtual void display()=0;
+};
+class Account:virtual public Person{
+    public:
+    int pay;
+    void init1(string a,string b,int c){
+	init(a,b);	pay=c;
+    }
+    void display(){
+	cout<<"Name= "<<name<<endl;	cout<<"Code= "<<code<<endl;
+	cout<<"Pay= "<<pay<<endl;
+    }
+};
+class Admin:virtual public Person{
+    public:
+    string exp;
+    void init2(string a,string b,string c){
+	init(a,b);	exp=c;
+    }
+    void display(){
+	cout<<"Name= "<<name<<endl;	cout<<"Code= "<<code<<endl;
+	cout<<"Experience= "<<exp<<endl;
+    }
+};
+class Master:public Account,public Admin{
+    public:
+    void init3(string a,string b,string c,int d){
+	init1(a,b,d);	init2(a,b,c);
+    }
+    void display(){
+	cout<<"Name= "<<name<<endl;	cout<<"Code= "<<code<<endl;
+	cout<<"Experience= "<<exp<<endl;  cout<<"Pay= "<<pay<<endl;
+    }
+};
+int main(){
+    Master p;
+    p.init3("A","0001","2 years",10000);    p.display();
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/network.png}
+\end{figure}
+.
+
+\section{Write a program demonstrating overriding using 'virtual'.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+class Base{
+    public:
+	void display(){    cout<<"Display Base"<<endl;	}
+	virtual void show(){    cout<<"Show Base"<<endl;	}
+};
+class Derived:public Base{
+    public:
+	void display(){    cout<<"Display Derived"<<endl;	}
+	void show(){    cout<<"Show Derived"<<endl;	}
+};
+int main(){
+    Base b;
+    Derived d;    Base *bptr;
+    bptr=&b;
+    bptr->display();    bptr->show();
+    bptr=&d;
+    bptr->display();    bptr->show();
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-30/poly.png}
+\end{figure}
+.
+
+\section{Write a program implementing Shape class, from which Triangle and Rectangle inherit. Use 'virtual'}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+class Shape{
+    public:
+    double l,b;
+    void getData(double _l,double _b){
+	l=_l;	b=_b;
+    }
+    virtual void display(){
+	cout<<"Area ="<<(l*b)<<"\n";
+    }
+};
+class Triangle:public Shape{
+    public:
+    void display(){
+	cout<<"Area of triangle="<<(0.5*b*l)<<"\n";
+    }
+};
+class Rectangle:public Shape{
+    public:
+    void display(){
+		cout<<"Area of triangle="<<(l*b)<<"\n";
+    }
+};
+class Circle:public Shape{
+    public:
+    void getData(int _l,int _b=0){
+	l=_l;	b=_b;
+    }
+    void display(){
+	cout<<"Area of circle="<<(3.1412*l*l)<<"\n";
+  	}
+};
+int main()
+{
+    Triangle t;	Rectangle r;
+    Circle c;
+    double l,b;
+    t.getData(4,5);	t.display();
+    r.getData(4,5);	r.display();
+    c.getData(5);	c.display();
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-30/shape2.png}
+\end{figure}
+.
+
+\section{Rewrite the previous program without using 'virtual'.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+class Shape{
+    public:
+    double l,b;
+    void getData(double _l,double _b){
+	l=_l;	b=_b;
+    }
+    void display(){
+	cout<<"Area ="<<(l*b)<<"\n";
+    }
+};
+class Triangle:public Shape{
+    public:
+    void display(){
+	cout<<"Area of triangle="<<(0.5*b*l)<<"\n";
+    }
+};
+class Rectangle:public Shape{
+    public:
+    void display(){
+	cout<<"Area of rectangle="<<(l*b)<<"\n";
+    }
+};
+class Circle:public Shape{
+    public:
+    void getData(int _l,int _b=0){
+	l=_l;	b=_b;
+    }
+};
+int main()
+{
+    Triangle t;	Rectangle r;
+    Circle c;
+    t.getData(4,5);	t.display();
+    r.getData(4,5);	r.display();
+    c.getData(5);	c.display();
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-30/shape3.png}
+\end{figure}
+.
+
+\section{Write a function template for finding the minimum value contained in an array.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+template<class R>
+R minimum(R a[],int n){
+    R m;    m=a[0];
+    for(int i=1;i<3;i++)if(m>a[i])m=a[i];
+    return m;
+}
+int main(){
+    int x[3]={10,21,3};
+    cout<<minimum(x,3)<<"\n";
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/min.png}
+\end{figure}
+.
+
+\section{Write a program containing a possible exception. Perform exception handling with multiple catch.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+void excp(){
+    int x=4;    int y=4;
+    if(x==y)throw(x-y);
+    else cout<<"Its fine"<<endl;
+}
+int main(){
+    try{	excp();    }
+    catch(int i){
+	cout<<"Both are equal."<<endl;
+    }
+    catch(char c){
+	cout<<"Character is found."<<endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/multcatch.png}
+\end{figure}
+.
+\\
+\section{Write a program to demonstrate the concept of rethrowing an exception.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+void excp1(){
+    int x=9;    int y=7;
+    if(x-y==2)throw('A');
+    else cout<<"Its fine."<<endl;
+}
+int main(){
+    try{	excp1();    }
+    catch(char c){
+	if(c=='B')cout<<"The diff is 2."<<endl;
+	else throw;
+    }
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/rethrow.png}
+\end{figure}
+.
+
+\section{Write a class template to represent a generic vector. Include member functions to perform the following taks:\\$*$ to create a vector\\$*$ to modify the value of a given element\\$*$ to multiply by a scalar.}
+\underline{Program:}
+\begin{lstlisting}[showstringspaces=false]
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<stdlib.h>
+#include<cmath>
+#define ll long long int
+using namespace std;
+template<class T>
+class vector
+{
+    T *v;
+    public:
+	void init(int size){
+	    v=new int[size];
+	    cout<<"Enter values"<<endl;
+	    for(int i=0;i<size;i++)cin>>v[i];
+	}
+	T multiply(vector &a,vector &b){
+	    T sum=0;
+	    for(int i=0;i<3;i++)sum+=a.v[i]*b.v[i];
+	    return sum;
+	}
+};
+int main(){
+    vector<int> v1;	vector<int> v2;
+    vector<int> v;
+    cout<<"Enter 3 values for v1:"<<endl;	v1.init(3);
+    cout<<"Enter 3 values for v2:"<<endl;	v2.init(3);
+    cout<<"Product="<<v.multiply(v1,v2)<<"\n";
+    return 0;
+}
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/vect.png}
+\end{figure}
+.
+
+
+\end{document}

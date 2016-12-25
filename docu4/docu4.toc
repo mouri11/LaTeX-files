@@ -1,0 +1,2 @@
+\contentsline {section}{\numberline {1}Linear Functions}{2}
+\contentsline {section}{\numberline {2}Quadratic Functions}{2}
