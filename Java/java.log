@@ -1,0 +1,725 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  12 DEC 2016 15:01
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**java.tex
+(./java.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 44.
+\cftparskip=\skip43
+\cftbeforetoctitleskip=\skip44
+\cftaftertoctitleskip=\skip45
+\cftbeforepartskip=\skip46
+\cftpartnumwidth=\skip47
+\cftpartindent=\skip48
+\cftbeforesecskip=\skip49
+\cftsecindent=\skip50
+\cftsecnumwidth=\skip51
+\cftbeforesubsecskip=\skip52
+\cftsubsecindent=\skip53
+\cftsubsecnumwidth=\skip54
+\cftbeforesubsubsecskip=\skip55
+\cftsubsubsecindent=\skip56
+\cftsubsubsecnumwidth=\skip57
+\cftbeforeparaskip=\skip58
+\cftparaindent=\skip59
+\cftparanumwidth=\skip60
+\cftbeforesubparaskip=\skip61
+\cftsubparaindent=\skip62
+\cftsubparanumwidth=\skip63
+\cftbeforeloftitleskip=\skip64
+\cftafterloftitleskip=\skip65
+\cftbeforefigskip=\skip66
+\cftfigindent=\skip67
+\cftfignumwidth=\skip68
+\c@lofdepth=\count87
+\c@lotdepth=\count88
+\cftbeforelottitleskip=\skip69
+\cftafterlottitleskip=\skip70
+\cftbeforetabskip=\skip71
+\cfttabindent=\skip72
+\cfttabnumwidth=\skip73
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count89
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count90
+\lst@currlwidth=\dimen103
+\lst@column=\count91
+\lst@pos=\count92
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count93
+\lst@lineno=\count94
+\lst@maxwidth=\dimen106
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count95
+\lst@skipnumbers=\count96
+\lst@framebox=\box27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count97
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip74
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count98
+\float@exts=\toks16
+\float@box=\box28
+\@float@everytoks=\toks17
+\@floatcapt=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 95.
+)
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count99
+\Gm@cntv=\count100
+\c@Gm@tempcnt=\count101
+\Gm@bindingoffset=\dimen109
+\Gm@wd@mp=\dimen110
+\Gm@odd@mp=\dimen111
+\Gm@even@mp=\dimen112
+\Gm@layoutwidth=\dimen113
+\Gm@layoutheight=\dimen114
+\Gm@layouthoffset=\dimen115
+\Gm@layoutvoffset=\dimen116
+\Gm@dimlist=\toks19
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip75
+\f@ncyO@elh=\skip76
+\f@ncyO@erh=\skip77
+\f@ncyO@olh=\skip78
+\f@ncyO@orh=\skip79
+\f@ncyO@elf=\skip80
+\f@ncyO@erf=\skip81
+\f@ncyO@olf=\skip82
+\f@ncyO@orf=\skip83
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen117
+\lightrulewidth=\dimen118
+\cmidrulewidth=\dimen119
+\belowrulesep=\dimen120
+\belowbottomsep=\dimen121
+\aboverulesep=\dimen122
+\abovetopsep=\dimen123
+\cmidrulesep=\dimen124
+\cmidrulekern=\dimen125
+\defaultaddspace=\dimen126
+\@cmidla=\count102
+\@cmidlb=\count103
+\@aboverulesep=\dimen127
+\@belowrulesep=\dimen128
+\@thisruleclass=\count104
+\@lastruleclass=\count105
+\@thisrulewidth=\dimen129
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen130
+\extrarowheight=\dimen131
+\NC@list=\toks20
+\extratabsurround=\skip84
+\backup@length=\skip85
+)
+\TX@col@width=\dimen132
+\TX@old@table=\dimen133
+\TX@old@col=\dimen134
+\TX@target=\dimen135
+\TX@delta=\dimen136
+\TX@cols=\count106
+\TX@ftn=\toks21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./java.aux)
+\openout1 = `java.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+\c@lstlisting=\count107
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen137
+\scratchbox=\box30
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen138
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks23
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includefoot 
+* h-part:(L,W,R)=(43.36243pt, 510.78302pt, 43.36243pt)
+* v-part:(T,H,B)=(43.36243pt, 758.32199pt, 43.36243pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=510.78302pt
+* \textheight=728.32199pt
+* \oddsidemargin=-28.90756pt
+* \evensidemargin=-28.90756pt
+* \topmargin=-36.135pt
+* \headheight=0.0pt
+* \headsep=7.22743pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+</home/mouri/Pictures/makaut.jpg, id=1, 304.13625pt x 251.94125pt>
+File: /home/mouri/Pictures/makaut.jpg Graphic file (type jpg)
+
+<use /home/mouri/Pictures/makaut.jpg>
+Package pdftex.def Info: /home/mouri/Pictures/makaut.jpg used on input line 54.
+
+(pdftex.def)             Requested size: 350.0092pt x 289.94162pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/mouri/Pictures/makau
+t.jpg>] [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 117.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 117.
+
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 151--152
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 154--155
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[3]
+</home/mouri/java_files/9-27/Patterns.png, id=20, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/9-27/Patterns.png Graphic file (type png)
+
+<use /home/mouri/java_files/9-27/Patterns.png>
+Package pdftex.def Info: /home/mouri/java_files/9-27/Patterns.png used on input
+ line 171.
+(pdftex.def)             Requested size: 350.0082pt x 379.73071pt.
+ [4 </home/mouri/java_files/9-27/Patterns.png>]
+</home/mouri/java_files/9-27/Prime.png, id=26, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/9-27/Prime.png Graphic file (type png)
+
+<use /home/mouri/java_files/9-27/Prime.png>
+Package pdftex.def Info: /home/mouri/java_files/9-27/Prime.png used on input li
+ne 198.
+(pdftex.def)             Requested size: 200.0002pt x 216.98412pt.
+
+</home/mouri/java_files/9-27/Reverse.png, id=27, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/9-27/Reverse.png Graphic file (type png)
+
+<use /home/mouri/java_files/9-27/Reverse.png>
+Package pdftex.def Info: /home/mouri/java_files/9-27/Reverse.png used on input 
+line 226.
+(pdftex.def)             Requested size: 350.0082pt x 379.73071pt.
+ [5 </home/mouri/java_files/9-27/Prime.png>]
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 246--247
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+</home/mouri/java_files/9-27/SumOfDigits.png, id=32, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/9-27/SumOfDigits.png Graphic file (type png)
+<use /home/mouri/java_files/9-27/SumOfDigits.png>
+Package pdftex.def Info: /home/mouri/java_files/9-27/SumOfDigits.png used on in
+put line 254.
+(pdftex.def)             Requested size: 350.0082pt x 379.73071pt.
+ [6 </home/mouri/java_files/9-27/Reverse.png>] [7 </home/mouri/java_files/9-27/
+SumOfDigits.png>]
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 286--287
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+</home/mouri/java_files/10-18/Area1.png, id=42, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/10-18/Area1.png Graphic file (type png)
+
+<use /home/mouri/java_files/10-18/Area1.png>
+Package pdftex.def Info: /home/mouri/java_files/10-18/Area1.png used on input l
+ine 303.
+(pdftex.def)             Requested size: 350.0082pt x 379.73071pt.
+ [8 </home/mouri/java_files/10-18/Area1.png>]
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 328--329
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+</home/mouri/java_files/10-18/Area2.png, id=47, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/10-18/Area2.png Graphic file (type png)
+
+<use /home/mouri/java_files/10-18/Area2.png>
+Package pdftex.def Info: /home/mouri/java_files/10-18/Area2.png used on input l
+ine 347.
+(pdftex.def)             Requested size: 350.0082pt x 379.73071pt.
+ [9]
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 352.
+ [10 </home/mouri/java_files/10-18/Area2.png>]
+</home/mouri/java_files/10-18/Bank.png, id=55, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/10-18/Bank.png Graphic file (type png)
+
+<use /home/mouri/java_files/10-18/Bank.png>
+Package pdftex.def Info: /home/mouri/java_files/10-18/Bank.png used on input li
+ne 420.
+(pdftex.def)             Requested size: 350.0082pt x 379.73071pt.
+ [11] [12 </home/mouri/java_files/10-18/Bank.png>]
+</home/mouri/java_files/10-18/Complex.png, id=63, 685.56125pt x 743.77875pt>
+File: /home/mouri/java_files/10-18/Complex.png Graphic file (type png)
+
+<use /home/mouri/java_files/10-18/Complex.png>
+Package pdftex.def Info: /home/mouri/java_files/10-18/Complex.png used on input
+ line 458.
+(pdftex.def)             Requested size: 350.0082pt x 379.73071pt.
+ [13 </home/mouri/java_files/10-18/Complex.png>]
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 480--481
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+</home/mouri/c++-files/11-9/string.png, id=69, 664.4825pt x 27.10126pt>
+File: /home/mouri/c++-files/11-9/string.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-9/string.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-9/string.png used on input li
+ne 508.
+(pdftex.def)             Requested size: 350.00426pt x 14.27509pt.
+ [14]
+</home/mouri/c++-files/11-9/student.png, id=73, 673.51625pt x 181.67876pt>
+File: /home/mouri/c++-files/11-9/student.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-9/student.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-9/student.png used on input l
+ine 544.
+(pdftex.def)             Requested size: 350.00436pt x 94.41249pt.
+ [15 </home/mouri/c++-files/11-9/string.png> </home/mouri/c++-files/11-9/studen
+t.png>]
+</home/mouri/c++-files/11-9/swap.png, id=79, 671.50874pt x 161.60374pt>
+File: /home/mouri/c++-files/11-9/swap.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-9/swap.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-9/swap.png used on input line
+ 584.
+(pdftex.def)             Requested size: 349.99602pt x 84.22923pt.
+ [16 </home/mouri/c++-files/11-9/swap.png>] [17]
+</home/mouri/c++-files/11-16/matrix.png, id=87, 675.52374pt x 315.1775pt>
+File: /home/mouri/c++-files/11-16/matrix.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-16/matrix.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-16/matrix.png used on input l
+ine 671.
+(pdftex.def)             Requested size: 350.00653pt x 163.3017pt.
+ [18 </home/mouri/c++-files/11-16/matrix.png>]
+</home/mouri/c++-files/11-16/opload1.png, id=92, 674.52pt x 160.6pt>
+File: /home/mouri/c++-files/11-16/opload1.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-16/opload1.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-16/opload1.png used on input 
+line 720.
+(pdftex.def)             Requested size: 350.00108pt x 83.33357pt.
+ [19 </home/mouri/c++-files/11-16/opload1.png>]
+</home/mouri/c++-files/11-16/string.png, id=98, 677.53125pt x 72.27pt>
+File: /home/mouri/c++-files/11-16/string.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-16/string.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-16/string.png used on input l
+ine 753.
+(pdftex.def)             Requested size: 350.01283pt x 37.33469pt.
+ [20 </home/mouri/c++-files/11-16/string.png>]
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 815--816
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[21] </home/mouri/c++-files/11-23/bank.png, id=106, 423.5825pt x 320.19624pt>
+File: /home/mouri/c++-files/11-23/bank.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-23/bank.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-23/bank.png used on input lin
+e 852.
+(pdftex.def)             Requested size: 249.99553pt x 188.97765pt.
+
+</home/mouri/c++-files/11-23/bank2.png, id=107, 425.59pt x 349.305pt>
+File: /home/mouri/c++-files/11-23/bank2.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-23/bank2.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-23/bank2.png used on input li
+ne 853.
+(pdftex.def)             Requested size: 250.00493pt x 205.19272pt.
+ [22 </home/mouri/c++-files/11-23/bank.png> </home/mouri/c++-files/11-23/bank2.
+png>]
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 925--926
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[23]
+File: /home/mouri/c++-files/11-23/bank.png Graphic file (type png)
+ <use /home/mouri/c++-files/11-23/bank.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-23/bank.png used on input lin
+e 960.
+(pdftex.def)             Requested size: 249.99553pt x 188.97765pt.
+File: /home/mouri/c++-files/11-23/bank2.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-23/bank2.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-23/bank2.png used on input li
+ne 961.
+(pdftex.def)             Requested size: 250.00493pt x 205.19272pt.
+
+</home/mouri/Pictures/educate.png, id=116, 490.83376pt x 352.31625pt>
+File: /home/mouri/Pictures/educate.png Graphic file (type png)
+
+<use /home/mouri/Pictures/educate.png>
+Package pdftex.def Info: /home/mouri/Pictures/educate.png used on input line 96
+8.
+(pdftex.def)             Requested size: 219.99687pt x 157.91187pt.
+ [24] [25 </home/mouri/Pictures/educate.png>]
+Overfull \hbox (3.86609pt too wide) in paragraph at lines 1037--1038
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[26]
+</home/mouri/c++-files/11-23/educate.png, id=128, 673.51625pt x 306.14375pt>
+File: /home/mouri/c++-files/11-23/educate.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-23/educate.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-23/educate.png used on input 
+line 1072.
+(pdftex.def)             Requested size: 350.00436pt x 159.09288pt.
+
+</home/mouri/Pictures/network.png, id=129, 493.845pt x 356.33125pt>
+File: /home/mouri/Pictures/network.png Graphic file (type png)
+
+<use /home/mouri/Pictures/network.png>
+Package pdftex.def Info: /home/mouri/Pictures/network.png used on input line 10
+79.
+(pdftex.def)             Requested size: 239.9968pt x 173.16841pt.
+ [27 </home/mouri/c++-files/11-23/educate.png> </home/mouri/Pictures/network.pn
+g>]
+</home/mouri/c++-files/11-23/network.png, id=135, 674.52pt x 74.2775pt>
+File: /home/mouri/c++-files/11-23/network.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-23/network.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-23/network.png used on input 
+line 1139.
+(pdftex.def)             Requested size: 350.00108pt x 38.54178pt.
+ [28]
+</home/mouri/c++-files/11-30/poly.png, id=139, 673.51625pt x 73.27374pt>
+File: /home/mouri/c++-files/11-30/poly.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-30/poly.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-30/poly.png used on input lin
+e 1176.
+(pdftex.def)             Requested size: 350.00436pt x 38.07796pt.
+ [29 </home/mouri/c++-files/11-23/network.png> </home/mouri/c++-files/11-30/pol
+y.png>]
+</home/mouri/c++-files/11-30/shape2.png, id=145, 675.52374pt x 57.21375pt>
+File: /home/mouri/c++-files/11-30/shape2.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-30/shape2.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-30/shape2.png used on input l
+ine 1235.
+(pdftex.def)             Requested size: 350.00653pt x 29.64392pt.
+ [30 </home/mouri/c++-files/11-30/shape2.png>]
+</home/mouri/c++-files/11-30/shape3.png, id=150, 675.52374pt x 60.225pt>
+File: /home/mouri/c++-files/11-30/shape3.png Graphic file (type png)
+
+<use /home/mouri/c++-files/11-30/shape3.png>
+Package pdftex.def Info: /home/mouri/c++-files/11-30/shape3.png used on input l
+ine 1290.
+(pdftex.def)             Requested size: 350.00653pt x 31.20413pt.
+ [31 </home/mouri/c++-files/11-30/shape3.png>]
+</home/mouri/c++-files/12-7/min.png, id=156, 677.53125pt x 29.10875pt>
+File: /home/mouri/c++-files/12-7/min.png Graphic file (type png)
+
+<use /home/mouri/c++-files/12-7/min.png>
+Package pdftex.def Info: /home/mouri/c++-files/12-7/min.png used on input line 
+1319.
+(pdftex.def)             Requested size: 350.01283pt x 15.03758pt.
+ [32 </home/mouri/c++-files/12-7/min.png>]
+</home/mouri/c++-files/12-7/multcatch.png, id=161, 675.52374pt x 30.1125pt>
+File: /home/mouri/c++-files/12-7/multcatch.png Graphic file (type png)
+
+<use /home/mouri/c++-files/12-7/multcatch.png>
+Package pdftex.def Info: /home/mouri/c++-files/12-7/multcatch.png used on input
+ line 1352.
+(pdftex.def)             Requested size: 350.00653pt x 15.60207pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1354--1356
+
+ []
+
+</home/mouri/c++-files/12-7/rethrow.png, id=162, 677.53125pt x 45.16875pt>
+File: /home/mouri/c++-files/12-7/rethrow.png Graphic file (type png)
+
+<use /home/mouri/c++-files/12-7/rethrow.png>
+Package pdftex.def Info: /home/mouri/c++-files/12-7/rethrow.png used on input l
+ine 1383.
+(pdftex.def)             Requested size: 350.01283pt x 23.33417pt.
+ [33 </home/mouri/c++-files/12-7/multcatch.png> </home/mouri/c++-files/12-7/ret
+hrow.png>]
+</home/mouri/c++-files/12-7/vect.png, id=168, 674.52pt x 120.45pt>
+File: /home/mouri/c++-files/12-7/vect.png Graphic file (type png)
+
+<use /home/mouri/c++-files/12-7/vect.png>
+Package pdftex.def Info: /home/mouri/c++-files/12-7/vect.png used on input line
+ 1425.
+(pdftex.def)             Requested size: 350.00108pt x 62.50018pt.
+ [34 </home/mouri/c++-files/12-7/vect.png>] (./java.aux) ) 
+Here is how much of TeX's memory you used:
+ 4883 strings out of 493029
+ 70865 string characters out of 6136235
+ 188275 words of memory out of 5000000
+ 8314 multiletter control sequences out of 15000+600000
+ 16146 words of font info for 63 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,12n,43p,547b,1605s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb>
+Output written on java.pdf (34 pages, 947705 bytes).
+PDF statistics:
+ 197 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+
