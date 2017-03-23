@@ -8,8 +8,17 @@
 \usepackage{tabu}
 \usepackage[T1]{fontenc}
 
+%For bullets
+\usepackage{tikz}
+
+\newcommand{\colouredcircle}{%
+\tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em);
+    \draw[ball color=blue,shading=ball,line width=0.03em] (0,0) circle(0.18em);}}
+\renewcommand{\labelitemi}{\colouredcircle}
+
+
 %% Sets page size and margins
-\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[a4paper,includefoot,top=1.5cm,bottom=0.5cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
 
 %% Useful packages
 \usepackage{amsmath}
@@ -18,10 +27,30 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
+%For footer
+\textheight=10in
+\footskip=25pt
 \usepackage{fancyhdr}
+\fancyhf{}
+\fancypagestyle{plain}{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{GSoC LibreOffice 2017}
+\cfoot{--\thepage--}
 \pagestyle{fancy}
-\lfoot{GSoC LibreOffice 2017}
 
+%Have bulleted subsections
+\makeatletter
+\newcommand{\heading}[1]% #1 = text
+{\par\vskip 1.5ex \@plus .2ex
+ \hangindent=1em
+ \noindent\makebox[1em][l]{$\,\bullet$}\textbf{\large #1}%
+\par\vskip 1.5ex \@plus .2ex
+\@afterheading}
+\makeatother
+
+\usepackage{xspace}
+\newcommand\nth{\textsuperscript{th}\xspace}%shortening nth
+\newcommand\nrd{\textsuperscript{rd}\xspace}
 
 {\title{\textbf{Debugging LibreOffice for Android}}
 \author{ \large{Rohit Das} \\ +918961452125 | rohit.das950@gmail.com\\ Serampore, Hooghly, West Bengal, India. GMT+5:30}
@@ -34,7 +63,7 @@
 
 \begin{document}
 \maketitle
-\section*{Overview}
+\Large{\section*{Overview}
 %\input{paper}
 
 \hspace{20pt}\textbf{LibreOffice}, a free and open-source office suite, a project of \textbf{The Document Foundation}, has been succesfully working since 2011 to make word-processing and other related jobs free and feasible. By 2015, LibreOffice had released its Android version with basic editing capabilities. Developers around the world contribute to this organisation and its endeavours to keep making it better for users of all fields, with all kinds of purposes.
@@ -47,8 +76,39 @@ I believe in what LibreOffice stands for and would like to offer a helping hand 
 \begin{description}
 \item[$\bullet$ Bug $106318$]: Android: optimize the UI for tablets.
 \item[$\bullet$ Bug $106326$]:  Android: Change font / background color.
-\item[$\bullet$ Bug $88389$]: Android document browser: there is no way to access external storage.
+\item[$\bullet$ Bug \hspace{5pt}$88389$]: Android document browser: there is no way to access external storage.
 \end{description}
+
+\section*{EasyHacks}
+
+\section*{Implementation}
+\hspace{20pt} Having used Android Studio to a certain extent for most of my Android apps, I will be much more flexible in debugging LibreOffice for Android in the same. Below is the timeline which I am presenting to show how I will divide my work along with my studies:
+\heading{Timeline}
+\hspace{20pt}\textbf{5\nth May, 2017 - 15\nth May,2017 :-}
+\begin{itemize}
+\item Speak to mentors and chalk out a path of progress,
+\item Acquaint myself with the code and make a rough sketch of where the bugs might be, and
+\item Set up my devices and software for debugging.\\\\
+\end{itemize}}
+
+\textbf{16\nth May, 2017 - 15\nth July, 2017 :-}
+\begin{itemize}
+\item Work on the bugs and take occasional help from mentors,
+\item Submit patches and fixes for evaluation, 
+\item Take reviews from mentors and work accordingly.\\\\
+\end{itemize}
+
+\textbf{16\nth July, 2017 - 15\nth August, 2017 :-}
+\begin{itemize}
+\item Go through other unresolved bugs and work on them,
+\item Submit patches and fixes for reviews,\\
+\end{itemize}
+
+\section*{Shortcomings}
+\hspace{20pt} Since I am currently studying in college, I will be able to commit 2-3 hours of my time on weekdays and 6-7 hours on weekends. Also, I will be having my exams during June-July(exact dates may vary), so I might slow a bit.
+
+\section*{About Me}
+\hspace{20pt}I am currently in my 3\nrd year pursuing B. Tech in Computer Science and Engineering from Maulana Abul Kalam Azad University of Technology, West Bengal. You can chck out my blog \href{https://mouri11.github.io/}{here}(work under progress). Check out my projects \href{https://github.com/mouri11}{here}.
 \bibliographystyle{plain}
 \bibliography{refs}
 \end{document}
