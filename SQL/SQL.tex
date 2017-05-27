@@ -4,12 +4,17 @@
 
 \usepackage[english]{babel}
 
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 \cftsetindents{section}{0em}{2em}
 \cftsetindents{subsection}{0em}{2em}
-\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cfttoctitlefont{\hfill\LARGE\bfseries}
 \renewcommand\cftaftertoctitle{\hfill\mbox{}}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{10}
+\setlength{\cftsubsecindent}{1cm}
+\setlength{\cftsubsecnumwidth}{3em}
+\addto\captionsenglish{%  
+  \centering\renewcommand{\contentsname}{INDEX}%
+}
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -117,39 +122,8 @@ Taught by: Prof. Kaushik Majumdar/ Prof. Mihir Singh\\
 %\centering
 \fi
 
-\begin{center}
-\LARGE\textbf{\underline{INDEX}}
-\end{center}
-\thispagestyle{empty}
-\begin{tabular}{|c|p{0.48\linewidth}|c|c|c|}
-\textbf{Sl. No.}&\textbf{Particulars}&\textbf{Date}&\textbf{Page No.}&\textbf{Signature}\\[5pt] \hline
-\\1.&Program to calculate average of cricket players.& 28/9/16 & 3 &\\ \hline
-\\2.&Program to calculate cost for consumer.& 28/9/16 & 4 &\\ \hline
-\\3.&Program to display votes received in election.& 28/9/16 & 5 &\\ \hline
-\\4.&Program for operation on array elements.& 19/10/16 & 6 &\\ \hline
-\\5.&Program to calculate factorial of a number.& 19/10/16 & 7 &\\ \hline
-\\6.&Program to calculate sum of series$1+22+32+42+...$.& 19/10/16 & 7 &\\ \hline
-\\7.&Program to add values of Complex no. objects.& 9/11/16 & 8 &\\ \hline
-\\8.&Program to convert distances to inches and add.& 28/9/16 & 9 &\\ \hline
-\\9.&Program for String class with different costructors.& 9/11/16 & 10 &\\ \hline
-\\10.&Program to display unique roll of Student objects.& 9/11/16 & 10 &\\ \hline
-11.&Program to swap values of objects using 'friend' function.& 9/11/16 & 11 &\\ \hline
-\\12.&Program for operation on matrices.& 16/11/16 & 12 &\\ \hline
-13.&Program to use overloaded operators on float numbers.& 16/11/16 & 14 &\\ \hline
-\\14.&Program to compare two strings by '==' operator.& 16/11/16 & 15 &\\ \hline
-\\15.&Program to implement current and savings a/c.& 23/11/16 & 16 &\\ \hline
-\\16.&Previous program rewritten using constructors.& 23/11/16 & 18 &\\ \hline
-\\17.&Program for an educational institution.& 23/11/16 & 20 &\\ \hline
-\\18.&Program to implement a network.& 23/11/16 & 23 &\\ \hline
-\\19.&Program to show overriding using 'virtual'.& 30/11/16 & 24 &\\ \hline
-\\20.&Program to implement Shape class using 'virtual'.& 30/11/16 & 25 &\\ \hline
-\\21.&Previous program rewritten without using 'virtual'.& 30/11/16 & 26 &\\ \hline
-\\22.&Program to use template for an array.& 7/12/16 & 27 &\\ \hline
-23.&Program to implement exception handling with multiple catch.& 7/12/16 & 28 &\\ \hline
-\\24.&Program to implement rethrowing an exception.& 7/12/16 & 29 &\\ \hline
-\\25.&Program to implement a generic vector.& 27/12/16 & 29 &\\ \hline
-\end{tabular}
-%\end{table}
+\tableofcontents
+\break
 
 \section{Date: 20/4/2017}
 
@@ -458,7 +432,7 @@ where city='Mumbai'
 Output:
 \begin{figure}[H]
 \centering
-%\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q2.csv}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q2.csv}
 \end{figure}
 \bigskip
 

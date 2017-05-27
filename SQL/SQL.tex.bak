@@ -9,7 +9,10 @@
 \cftsetindents{subsection}{0em}{2em}
 \renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
 \renewcommand\cftaftertoctitle{\hfill\mbox{}}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{10}
+\setlength{\cftsubsecindent}{1cm}
+\setlength{\cftsubsecnumwidth}{3em}
+\renewcommand\contentsname{whatever}
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -117,39 +120,8 @@ Taught by: Prof. Kaushik Majumdar/ Prof. Mihir Singh\\
 %\centering
 \fi
 
-\begin{center}
-\LARGE\textbf{\underline{INDEX}}
-\end{center}
-\thispagestyle{empty}
-\begin{tabular}{|c|p{0.48\linewidth}|c|c|c|}
-\textbf{Sl. No.}&\textbf{Particulars}&\textbf{Date}&\textbf{Page No.}&\textbf{Signature}\\[5pt] \hline
-\\1.&Program to calculate average of cricket players.& 28/9/16 & 3 &\\ \hline
-\\2.&Program to calculate cost for consumer.& 28/9/16 & 4 &\\ \hline
-\\3.&Program to display votes received in election.& 28/9/16 & 5 &\\ \hline
-\\4.&Program for operation on array elements.& 19/10/16 & 6 &\\ \hline
-\\5.&Program to calculate factorial of a number.& 19/10/16 & 7 &\\ \hline
-\\6.&Program to calculate sum of series$1+22+32+42+...$.& 19/10/16 & 7 &\\ \hline
-\\7.&Program to add values of Complex no. objects.& 9/11/16 & 8 &\\ \hline
-\\8.&Program to convert distances to inches and add.& 28/9/16 & 9 &\\ \hline
-\\9.&Program for String class with different costructors.& 9/11/16 & 10 &\\ \hline
-\\10.&Program to display unique roll of Student objects.& 9/11/16 & 10 &\\ \hline
-11.&Program to swap values of objects using 'friend' function.& 9/11/16 & 11 &\\ \hline
-\\12.&Program for operation on matrices.& 16/11/16 & 12 &\\ \hline
-13.&Program to use overloaded operators on float numbers.& 16/11/16 & 14 &\\ \hline
-\\14.&Program to compare two strings by '==' operator.& 16/11/16 & 15 &\\ \hline
-\\15.&Program to implement current and savings a/c.& 23/11/16 & 16 &\\ \hline
-\\16.&Previous program rewritten using constructors.& 23/11/16 & 18 &\\ \hline
-\\17.&Program for an educational institution.& 23/11/16 & 20 &\\ \hline
-\\18.&Program to implement a network.& 23/11/16 & 23 &\\ \hline
-\\19.&Program to show overriding using 'virtual'.& 30/11/16 & 24 &\\ \hline
-\\20.&Program to implement Shape class using 'virtual'.& 30/11/16 & 25 &\\ \hline
-\\21.&Previous program rewritten without using 'virtual'.& 30/11/16 & 26 &\\ \hline
-\\22.&Program to use template for an array.& 7/12/16 & 27 &\\ \hline
-23.&Program to implement exception handling with multiple catch.& 7/12/16 & 28 &\\ \hline
-\\24.&Program to implement rethrowing an exception.& 7/12/16 & 29 &\\ \hline
-\\25.&Program to implement a generic vector.& 27/12/16 & 29 &\\ \hline
-\end{tabular}
-%\end{table}
+\tableofcontents
+\break
 
 \section{Date: 20/4/2017}
 
@@ -458,7 +430,7 @@ where city='Mumbai'
 Output:
 \begin{figure}[H]
 \centering
-%\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q2.csv}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q2.csv}
 \end{figure}
 \bigskip
 
@@ -497,9 +469,8 @@ add Telephone number(10)
 Output:
 \begin{figure}[H]
 \centering
-
+\verbatiminput{/home/mouri/DBMS2/DBMS/Week5/q5.txt}
 \end{figure}
-\bigskip
 
 \subsection{Delete the column 'Telephone'.}
 \underline{Query:}
@@ -512,20 +483,16 @@ Output:
 \centering
 \verbatiminput{/home/mouri/DBMS2/DBMS/Week5/q6.txt}
 \end{figure}
-\bigskip
 
 \subsection{Change the name of Client\_Master to Clnt\_Mast.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
 rename client_master to clnt_mast
 \end{lstlisting}
-Output:
+%Output:
 \begin{figure}[H]
 \centering
-
 \end{figure}
-\bigskip
-
 \subsection{List the names of all clients having 'a' letter in their names.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
@@ -537,7 +504,8 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q9.csv}
 \end{figure}
-\bigskip
+%\bigskip
+%\smallskip
 
 \subsection{List the names of the clients who stay in 'Bangalore' or 'Mangalore'.}
 \underline{Query:}
@@ -563,7 +531,8 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q11.csv}
 \end{figure}
-\bigskip
+%\bigskip
+\smallskip
 
 \subsection{List all the information from the Sales\_Order table for orders placed in the month of June.}
 \underline{Query:}
@@ -729,8 +698,8 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q3.csv}
 \end{figure}
-\bigskip
-
+%\bigskip
+\medskip
 \subsection{Use a different JOIN so that all teachers are listed.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
@@ -742,8 +711,8 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q4.csv}
 \end{figure}
-\bigskip
-
+%\bigskip
+\medskip
 \subsection{Use a different JOIN so that all departments are listed.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
@@ -782,8 +751,8 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q7.csv}
 \end{figure}
-\bigskip
-
+%\bigskip
+\medskip
 \subsection{Use COUNT to show the number of teachers and the number of mobile phones.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
@@ -796,8 +765,8 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q8.csv}
 \end{figure}
-\bigskip
-
+%\bigskip
+\medskip
 \subsection{Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
@@ -811,7 +780,6 @@ Output:
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q9.csv}
 \end{figure}
 \bigskip
-
 \subsection{Use CASE to show the name of each teacher followed by 'Sci' if the teacher is in dept 1 or 2 and 'Art' otherwise.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
