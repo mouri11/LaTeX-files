@@ -2,6 +2,8 @@
 
 \renewcommand\thesection{\arabic{section}.}
 
+\usepackage[english]{babel}
+
 \usepackage{tocloft}
 \cftsetindents{section}{0em}{2em}
 \cftsetindents{subsection}{0em}{2em}
@@ -32,6 +34,8 @@
 
 \usepackage{booktabs}
 \usepackage{tabularx}
+
+\usepackage{verbatim}
 
 %\usepackage{array}
 %\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
@@ -97,7 +101,7 @@
 \centering
 \includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/makaut.jpg}
 \end{figure}
-.
+\bigskip
 
 \begin{flushright}
 \underline{\textbf{\author{\Huge Rohit Das}}}\\
@@ -152,9 +156,9 @@ Taught by: Prof. Kaushik Majumdar/ Prof. Mihir Singh\\
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week3/ETeam.csv}
 \LARGE{ETeam (PK: ID)}
 
-.
+\bigskip
 
-.
+\bigskip
 
 \large{\csvautotabular{/home/mouri/DBMS2/DBMS/Week3/Game.csv}}
 \LARGE{Game(PK:ID)}
@@ -187,7 +191,7 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week3/q2.csv}
 \end{figure}
-.
+\bigskip
 
 
 \subsection{Show player, teamid, coach, gtime for all goals scored in the first 10 minutes.}
@@ -217,7 +221,7 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week3/q4.csv}
 \end{figure}
-.
+\bigskip
 
 
 \subsection{List the player for every goal scored in a game  whre the stadium was 'National Stadium, Warsaw'.}
@@ -233,7 +237,7 @@ Output:
 \centering
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week3/q5.csv}
 \end{figure}
-.
+\bigskip
 
 
 \subsection{Show the name of the player who scored a goal against Germany('GER').}
@@ -312,7 +316,7 @@ where game.id=1019 or game.id=1021
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-9/dist.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week4/q1.csv}
 \end{figure}
 .
 
@@ -327,7 +331,7 @@ where game.team1='GER'
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-9/string.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week4/q2.csv}
 \end{figure}
 .
 \subsection{Show the matchdate,stadium,teamname where Diego Maradona was the coach. Use right join.}
@@ -341,7 +345,7 @@ where eteam.coach='Diego Maradona'
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-9/student.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week4/q3.csv}
 \end{figure}
 .
 
@@ -355,9 +359,11 @@ on game.team2=eteam.id
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-9/swap.png}
+\csvautotabular[filter={\value{csvrow}<5}]{/home/mouri/DBMS2/DBMS/Week4/q4.csv}
 \end{figure}
-.
+
+\bigskip
+\bigskip
 
 \section{Date: 27/4/2017}
 \csvautotabular{/home/mouri/DBMS2/DBMS/Week4/order.csv}
@@ -388,7 +394,7 @@ where a.empid=b.manager and (b.empid=4 or b.empid=6)
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-16/matrix.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week4/q5.csv}
 \end{figure}
 .
 
@@ -402,711 +408,441 @@ where emp.manager=man.empid and man.empid=4
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-16/opload1.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week4/q6.csv}
 \end{figure}
-.
 
-\section{Write a program to compare two strings by overloading the '==' operator.}
+\bigskip
+\bigskip
+\section{Date: 4/5/2017}
+\large{\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/clnt-mast.csv}}
+\bigskip
+
+\LARGE{Client\_Master (PK:Client-No)}
+
+\bigskip
+
+\bigskip
+
+\footnotesize{\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/prod-mast.csv}}
+
+\bigskip
+\LARGE{Product\_Master  (PK:Product-No)}
+
+\bigskip
+\large{\csvautotabular[filter={\value{csvrow}<32}]{/home/mouri/DBMS2/DBMS/Week5/sal-ord.csv}}
+
+\bigskip
+\LARGE{Sales\_Order (PK: Order-No, FK: Client-No)}
+
+\bigskip
+
+\bigskip
+\subsection{Retrieve the list of names, city and the states of all the clients.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-using namespace std;
-class String{
-	string s;
-	public:
-	String(){	s="";	}
-	String(string _s){	s=_s;	}
-	string operator==(String);
-};
-string String::operator==(String str){
-	if(s==str.s)return "Equals\n";
-	else return "Not equals\n";
-}
-int main(){
-	String s1("Hello"),s2("Hola"),s3("Hello");
-	cout<<"Comparing Hello and Hola:"<<endl;
-	cout<<(s1==s2);
-	cout<<"Comparing Hello and Hello:"<<endl;
-	cout<<(s1==s3);
-}
+select name, city, state from client_master
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-16/string.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q1.csv}
 \end{figure}
-.
+\bigskip
 
-\section{Write a program to create a class account that stores customer name, account number and type of account. Create two more classes for current a/c and savings a/c. The current a/c will have:\\$*$cheque facility, \\$*$ minimum balance and deduction for balance below that,\\$*$deposit and withdrawal. The saving a/c will have similar member methods, except for cheque and minimum balance, it will have an interest calculation. Do not use constructors.}
+\subsection{List all the clients who are located in Mumbai.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-class Account{
-    string customer_name,acct_type;
-    ll acct;
-};
-class Cur_acct:public Account{
-    double balance,minBal;
-    public:
-	void setbal(double a,double b)	{
-	    balance=a;
-	    minBal=b;
-	}
-	void withdrawal(int n)	{
-	    if(balance<minBal)balance-=(balance*0.10);
-	    else if(n>balance)printf("Insufficient balance.\n");
-	    else balance-=n;
-	}
-	void deposit(int n){    balance+=n;	}
-	void cheque(){ cout<<"Deposited by cheque..."<<endl;	}
-	void show(){
-	    printf("Current balance=%.2f\n",balance);
-	}
-};
-class Sav_acct:public Account{
-    double balance;
-    public:
-	void setbal(double a){    balance=a;	}
-	void withdrawal(int n){
-	    if(n>balance)printf("Insufficient balance.\n");
-	    else balance-=n;
-	}
-	void deposit(int n){    balance+=n;	}
-	void interest(){    balance+=(balance*0.20);	}
-	void show(){
-	    printf("Current balance:%.2f\n",balance);
-	}
-};
-int main(){
-    cout<<"Enter type of account(s for savings, c for current):"<<endl;
-    char c;    cin>>c;
-    cout<<"Enter balance:"<<endl;
-    int bal;    cin>>bal;
-    if(c=='c'){
-		cout<<"Enter minimum balance:"<<endl;
-		int minbal;	cin>>minbal;
-		Cur_acct c1;
-		c1.setbal(bal,minbal);
-		cout<<"Enter amount to deposit:"<<endl;
-		int n;	cin>>n;
-		cout<<"Do you want to use cheque or cash?(c for cheque)..
-		"<<endl;
-		char c;	cin>>c;
-		if(c=='c')c1.cheque();
-		c1.deposit(n);	cout<<"Deposited: Rs."<<n<<"\n";
-		c1.show();
-		cout<<"Enter amount to withdraw:"<<endl;
-		cin>>n;	c1.withdrawal(n);
-		cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
-		cout<<"Enter amount to withdraw:"<<endl;
-		cin>>n;	c1.withdrawal(n);
-		cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
-   	 }
-    else{
-		Sav_acct s1;
-		s1.setbal(bal);
-		cout<<"Enter amount to deposit:"<<endl;
-		int n;	cin>>n;
-		s1.deposit(n);
-		cout<<"Deposited: Rs."<<n<<"\n";	s1.show();
-		cout<<"Enter amount to withdraw:"<<endl;
-        cin>>n;	s1.withdrawal(n);
-		cout<<"Withdrawal: Rs."<<n<<"\n";
-		s1.show();
-    	cout<<"Enter amount to withdraw:"<<endl;
-        cin>>n;	s1.withdrawal(n);
-		cout<<"Withdrawal: Rs."<<n<<"\n";	s1.show();
-		cout<<"Adding interest of 0.20 to current balance:"
-		<<endl;
-		s1.interest();	s1.show();
-    }
-    return 0;
-}
+select name from client_master
+where city='Mumbai'
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank.png}
-\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank2.png}
+%\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q2.csv}
 \end{figure}
-.
+\bigskip
 
-\section{Rewrite the above program using constructors.}
+\subsection{List the various products available from the PRODUCT-MASTER table.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-using namespace std;
-class Account{
-    string customer_name,acct_type;
-    ll acct;
-    public:
-    Account(){}
-    Account(string a,string b,ll c){
-	customer_name=a;
-	acct_type=b;
-	acct=c;
-    }
-};
-class Cur_acct:public Account{
-    double balance,minBal;
-    public:
-	Cur_acct(double a,double b){
-	    balance=a;
-	    minBal=b;
-	}
-	void withdrawal(int n){
-	    if(balance<minBal)balance-=(balance*0.10);
-	    else if(n>balance)printf("Insufficient balance.\n");
-	    else balance-=n;
-	}
-	void deposit(int n){    balance+=n;	}
-	void cheque(){
-	    cout<<"Deposited by cheque..."<<endl;
-	}
-	void show(){
-	    printf("Current balance=%.2f\n",balance);
-	}
-};
-class Sav_acct:public Account
-{
-    double balance;
-    public:
-	Sav_acct(int a){    balance=a;	}
-	void withdrawal(int n){
-	    if(n>balance)printf("Insufficient balance.\n");
-	    else balance-=n;
-	}
-	void deposit(int n){    balance+=n;	}
-	void interest(){    balance+=(balance*0.20);	}
-	void show(){
-	    printf("Current balance:%.2f\n",balance);
-	}
-};
-int main(){
-    cout<<"Enter type of account(s for savings, c for current):"<<endl;
-    char c;    cin>>c;
-    cout<<"Enter balance:"<<endl;
-    int bal;    cin>>bal;
-    if(c=='c'){
-	cout<<"Enter minimum balance:"<<endl;
-	int minbal;	cin>>minbal;
-	Cur_acct c1(bal,minbal);
-	cout<<"Enter amount to deposit:"<<endl;
-	int n;	cin>>n;
-	cout<<"Do you want to use cheque or cash?(c for cheque).."<<endl;
-	char c;	cin>>c;
-	if(c=='c')c1.cheque();
-	c1.deposit(n);
-	cout<<"Deposited: Rs."<<n<<"\n";	c1.show();
-	cout<<"Enter amount to withdraw:"<<endl;
-	cin>>n;	c1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";
-	c1.show();
-	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
-	c1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
-    }
-    else{
-	Sav_acct s1(bal);
-	cout<<"Enter amount to deposit:"<<endl;
-	int n;	cin>>n;
-	s1.deposit(n);
-	cout<<"Deposited: Rs."<<n<<"\n";	s1.show();
-	cout<<"Enter amount to withdraw:"<<endl;
-    cin>>n;	s1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";
-	s1.show();
-	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
-	s1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";	s1.show();	
-	cout<<"Adding interest of 0.20 to current balance:"<<endl;
-	s1.interest();	s1.show();
-    }
-    return 0;
-}
+select description from product_master
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank.png}
-\includegraphics[width=250pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/bank2.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q3.csv}
 \end{figure}
-.
+\bigskip
 
-\section{ An educational institution wishes to maintain a database of its employees. The database is divided into a number of classes whose hierarchical relationships are shown in figure below. The figure also shows the minimum information required for each class. Specify all the classes and define functions to create the database and retrieve individual information as and when required.}
-\begin{figure}[H]
-\centering
-\includegraphics[width=220pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/educate.png}
-\end{figure}
-\underline{Program:}
-\begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#define ll long long int
-using namespace std;
-class Staff{
-    string code,name;
-    public:
-    Staff(){}
-    void init(string a,string b){  code=a;  name=b;  }
-    void getS(){
-	cout<<"Code= "<<code<<endl;
-	cout<<"Name= "<<name<<endl;
-    }
-};
-class Teacher:public Staff{
-    string subj,publ;
-    public:
-    Teacher(){}
-    void init1(string c,string d,string a,string b){
-		init(c,d);  subj=a;  publ=b;
-    }
-    void getT(){
-	getS();	cout<<"Subject= "<<subj<<endl;
-	cout<<"Publication= "<<publ<<endl;
-    }
-};
-class Typist:public Staff{
-    double speed;
-    public:
-    Typist(){}
-    void init1(string a,string b,double d){
-		init(a,b);	speed=d;
-    }
-    void getT2(){
-	getS();
-	cout<<"Speed= "<<speed<<" Words per minute."<<endl;
-    }
-};
-class Officer:public Staff{
-    string grade;
-    public:
-    Officer(){}
-    void init1(string b,string c,string a){
-		init(b,c);	grade=a;
-    }
-    void getO(){
-		getS();	cout<<"Grade= "<<grade<<"\n";
-    }
-};
-class Regular:public Typist{
-    public:
-    Regular(){}
-    void init2(string a,string b,int s){  init1(a,b,s);  }
-    void getR(){	getT2();    }
-};
-class Casual:public Typist
-{
-    int wages;
-    public:
-    Casual(){}
-    void init2(string a,string b,int s,int t)
-    {
-	init1(a,b,s);
-	wages=t;
-    }
-    void getC()
-    {
-	getT2();
-	cout<<"Daily Wages= "<<wages<<endl;
-    }
-};
-int main()
-{
-    Teacher t;
-    cout<<"Staff: Teacher"<<endl;
-    t.init1("0001","A","Maths","Srijan");
-    t.getT();
-    Officer o;
-    cout<<"Staff: Officer"<<endl;
-    o.init1("1001","B","A");
-    o.getO();
-    cout<<"Staff: Typist(Regular)"<<endl;
-    Regular r;
-    r.init2("2001","C",30);
-    r.getR();
-    cout<<"Staff: Typist(Casual)"<<endl;
-    Casual c;
-    c.init2("2002","D",30,10000);
-    c.getC();
-    return 0;
-}
-\end{lstlisting}
-Output:
-\begin{figure}[H]
-\centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/educate.png}
-\end{figure}
-.
-
-\section{Consider a class network as shown below. Define all four classes and write a program to create, update and display the information contained in master objects.}
-\begin{figure}[H]
-\centering
-\includegraphics[width=240pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/network.png}
-\end{figure}
+\subsection{Change the city of Client\_No 'C00005' to Bangalore.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-class Person{
-    public:
-    string name,code;
-    void init(string a,string b){
-	name=a;	code=b;
-    }
-    virtual void display()=0;
-};
-class Account:virtual public Person{
-    public:
-    int pay;
-    void init1(string a,string b,int c){
-	init(a,b);	pay=c;
-    }
-    void display(){
-	cout<<"Name= "<<name<<endl;	cout<<"Code= "<<code<<endl;
-	cout<<"Pay= "<<pay<<endl;
-    }
-};
-class Admin:virtual public Person{
-    public:
-    string exp;
-    void init2(string a,string b,string c){
-	init(a,b);	exp=c;
-    }
-    void display(){
-	cout<<"Name= "<<name<<endl;	cout<<"Code= "<<code<<endl;
-	cout<<"Experience= "<<exp<<endl;
-    }
-};
-class Master:public Account,public Admin{
-    public:
-    void init3(string a,string b,string c,int d){
-	init1(a,b,d);	init2(a,b,c);
-    }
-    void display(){
-	cout<<"Name= "<<name<<endl;	cout<<"Code= "<<code<<endl;
-	cout<<"Experience= "<<exp<<endl;  cout<<"Pay= "<<pay<<endl;
-    }
-};
-int main(){
-    Master p;
-    p.init3("A","0001","2 years",10000);    p.display();
-    return 0;
-}
+update client_master
+set city='Bangalore'
+where client_no='C00005'
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-23/network.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q4.csv}
 \end{figure}
-.
+\bigskip
 
-\section{Write a program demonstrating overriding using 'virtual'.}
+\subsection{Add a column called 'Telephone' of datatype 'number' and size='10' to the Client\_Master table.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-class Base{
-    public:
-	void display(){    cout<<"Display Base"<<endl;	}
-	virtual void show(){    cout<<"Show Base"<<endl;	}
-};
-class Derived:public Base{
-    public:
-	void display(){    cout<<"Display Derived"<<endl;	}
-	void show(){    cout<<"Show Derived"<<endl;	}
-};
-int main(){
-    Base b;
-    Derived d;    Base *bptr;
-    bptr=&b;
-    bptr->display();    bptr->show();
-    bptr=&d;
-    bptr->display();    bptr->show();
-    return 0;
-}
+alter table client_master
+add Telephone number(10)
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-30/poly.png}
-\end{figure}
-.
 
-\section{Write a program implementing Shape class, from which Triangle and Rectangle inherit. Use 'virtual'}
-\underline{Query:}
-\begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-class Shape{
-    public:
-    double l,b;
-    void getData(double _l,double _b){
-	l=_l;	b=_b;
-    }
-    virtual void display(){
-	cout<<"Area ="<<(l*b)<<"\n";
-    }
-};
-class Triangle:public Shape{
-    public:
-    void display(){
-	cout<<"Area of triangle="<<(0.5*b*l)<<"\n";
-    }
-};
-class Rectangle:public Shape{
-    public:
-    void display(){
-		cout<<"Area of triangle="<<(l*b)<<"\n";
-    }
-};
-class Circle:public Shape{
-    public:
-    void getData(int _l,int _b=0){
-	l=_l;	b=_b;
-    }
-    void display(){
-	cout<<"Area of circle="<<(3.1412*l*l)<<"\n";
-  	}
-};
-int main()
-{
-    Triangle t;	Rectangle r;
-    Circle c;
-    double l,b;
-    t.getData(4,5);	t.display();
-    r.getData(4,5);	r.display();
-    c.getData(5);	c.display();
-    return 0;
-}
-\end{lstlisting}
-Output:
-\begin{figure}[H]
-\centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-30/shape2.png}
 \end{figure}
-.
+\bigskip
 
-\section{Rewrite the previous program without using 'virtual'.}
+\subsection{Delete the column 'Telephone'.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-class Shape{
-    public:
-    double l,b;
-    void getData(double _l,double _b){
-	l=_l;	b=_b;
-    }
-    void display(){
-	cout<<"Area ="<<(l*b)<<"\n";
-    }
-};
-class Triangle:public Shape{
-    public:
-    void display(){
-	cout<<"Area of triangle="<<(0.5*b*l)<<"\n";
-    }
-};
-class Rectangle:public Shape{
-    public:
-    void display(){
-	cout<<"Area of rectangle="<<(l*b)<<"\n";
-    }
-};
-class Circle:public Shape{
-    public:
-    void getData(int _l,int _b=0){
-	l=_l;	b=_b;
-    }
-};
-int main()
-{
-    Triangle t;	Rectangle r;
-    Circle c;
-    t.getData(4,5);	t.display();
-    r.getData(4,5);	r.display();
-    c.getData(5);	c.display();
-    return 0;
-}
+alter table client_master
+drop column Telephone
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/11-30/shape3.png}
+\verbatiminput{/home/mouri/DBMS2/DBMS/Week5/q6.txt}
 \end{figure}
-.
+\bigskip
 
-\section{Write a function template for finding the minimum value contained in an array.}
+\subsection{Change the name of Client\_Master to Clnt\_Mast.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-template<class R>
-R minimum(R a[],int n){
-    R m;    m=a[0];
-    for(int i=1;i<3;i++)if(m>a[i])m=a[i];
-    return m;
-}
-int main(){
-    int x[3]={10,21,3};
-    cout<<minimum(x,3)<<"\n";
-    return 0;
-}
+rename client_master to clnt_mast
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/min.png}
-\end{figure}
-.
 
-\section{Write a program containing a possible exception. Perform exception handling with multiple catch.}
-\underline{Query:}
-\begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-void excp(){
-    int x=4;    int y=4;
-    if(x==y)throw(x-y);
-    else cout<<"Its fine"<<endl;
-}
-int main(){
-    try{	excp();    }
-    catch(int i){
-	cout<<"Both are equal."<<endl;
-    }
-    catch(char c){
-	cout<<"Character is found."<<endl;
-    }
-    return 0;
-}
-\end{lstlisting}
-Output:
-\begin{figure}[H]
-\centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/multcatch.png}
 \end{figure}
-.
-\\
-\section{Write a program to demonstrate the concept of rethrowing an exception.}
-\underline{Query:}
-\begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-void excp1(){
-    int x=9;    int y=7;
-    if(x-y==2)throw('A');
-    else cout<<"Its fine."<<endl;
-}
-int main(){
-    try{	excp1();    }
-    catch(char c){
-	if(c=='B')cout<<"The diff is 2."<<endl;
-	else throw;
-    }
-    return 0;
-}
-\end{lstlisting}
-Output:
-\begin{figure}[H]
-\centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/rethrow.png}
-\end{figure}
-.
+\bigskip
 
-\section{Write a class template to represent a generic vector. Include member functions to perform the following taks:\\$*$ to create a vector\\$*$ to modify the value of a given element\\$*$ to multiply by a scalar.}
+\subsection{List the names of all clients having 'a' letter in their names.}
 \underline{Query:}
 \begin{lstlisting}[showstringspaces=false]
-#include<iostream>
-#include<cstdio>
-#include<string>
-#include<stdlib.h>
-#include<cmath>
-#define ll long long int
-using namespace std;
-template<class T>
-class vector
-{
-    T *v;
-    public:
-	void init(int size){
-	    v=new int[size];
-	    cout<<"Enter values"<<endl;
-	    for(int i=0;i<size;i++)cin>>v[i];
-	}
-	T multiply(vector &a,vector &b){
-	    T sum=0;
-	    for(int i=0;i<3;i++)sum+=a.v[i]*b.v[i];
-	    return sum;
-	}
-};
-int main(){
-    vector<int> v1;	vector<int> v2;
-    vector<int> v;
-    cout<<"Enter 3 values for v1:"<<endl;	v1.init(3);
-    cout<<"Enter 3 values for v2:"<<endl;	v2.init(3);
-    cout<<"Product="<<v.multiply(v1,v2)<<"\n";
-    return 0;
-}
+select name from clnt_mast
+where name like '%a%'
 \end{lstlisting}
 Output:
 \begin{figure}[H]
 \centering
-\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/c++-files/12-7/vect.png}
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q9.csv}
 \end{figure}
-.
+\bigskip
+
+\subsection{List the names of the clients who stay in 'Bangalore' or 'Mangalore'.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name from clnt_mast
+where city like '_angalore'
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q10.csv}
+\end{figure}
+\bigskip
+
+\subsection{List the names of the clients having 'h' as the second letter in their names.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name from clnt_mast
+where name like '_h%'
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q11.csv}
+\end{figure}
+\bigskip
+
+\subsection{List all the information from the Sales\_Order table for orders placed in the month of June.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select * from sales_order
+where order_date like '%JUN%'
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q12.csv}
+\end{figure}
+\bigskip
+
+\subsection{List the information for Client\_No 'C00001' and 'C00002'.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select * from sales_order
+where client_no='C00001' or client_no='C00002'
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q13.csv}
+\end{figure}
+\bigskip
+
+\subsection{List products whose selling price is greater than 500 and less than 700.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select * from product_master
+where sell_price > 500 and sell_price < 700
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q14.csv}
+\end{figure}
+\bigskip
+
+\subsection{List the names, city and states of clients who are not in the state of 'Maharashtra'.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name,city,state from clnt_mast
+where state <> 'Maharashtra'
+
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q15.csv}
+\end{figure}
+\bigskip
+
+\subsection{List the products whose selling price is more than 500. Calculate a new selling price as, original selling price * 15. Rename the new column in the output of the above query as New\_Price.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select description, sell_price*15 as new_price 
+from product_master
+where sell_price > 500
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\footnotesize{\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q16.csv}}
+\end{figure}
+\bigskip
+\subsection{Count the number of products having sell\_price less than or equal to 500.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select count(sell_price) from product_master
+where sell_price < = 500
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q18.csv}
+\end{figure}
+\bigskip
+\subsection{List the order number and day on which clients placed their order.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name,order_no,order_date,to_char(to_date(order_date,'dd/mm/yyyy'), 'DY') as day
+from sales_order join clnt_mast on clnt_mast.client_no=sales_order.client_no
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q19.csv}
+\end{figure}
+\bigskip
+
+\section{Date: 4/5/2017}
+
+(Refer to tables on pages 7,8 and 9)
+
+\subsection{Show the stadium and the number of goals scored in each stadium. For every match where 'GER' scored, show matchid, match date and the number of goals scored by 'GER'.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select matchid,mdate,count(*)
+from game join goal 
+on goal.matchid=game.id
+where teamid='GER'
+group by mdate,matchid
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week5/q19.csv}
+\end{figure}
+\bigskip
+
+\section{Date: 11/5/2017}
+\large{\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/teach.csv}}
+\LARGE{Teacher (PK: ID)}
+
+\bigskip
+
+\bigskip
+
+\large{\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/dept.csv}}
+\LARGE{Dept (PK: ID)}
+
+\bigskip
+
+\bigskip
+
+\subsection{List the teachers who have NULL for their department.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name from teacher
+where dept is null
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q1.csv}
+\end{figure}
+\bigskip
+
+\subsection{Show teacher name and dept. name for teachers having not null in dept.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select teacher.name, dept.name as dept
+from teacher join dept on teacher.dept=dept.id
+where teacher.dept is not null
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q2.csv}
+\end{figure}
+\bigskip
+
+\subsection{Show teachers name, id, mobile and dept name.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select teacher.name, teacher.id, teacher.mobile, dept.name 
+from dept full outer join teacher on teacher.dept=dept.id
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q3.csv}
+\end{figure}
+\bigskip
+
+\subsection{Use a different JOIN so that all teachers are listed.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select teacher.name, teacher.id, dept.name 
+from dept right outer join teacher on teacher.dept=dept.id
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q4.csv}
+\end{figure}
+\bigskip
+
+\subsection{Use a different JOIN so that all departments are listed.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select teacher.name, teacher.id, dept.name 
+from dept left outer join teacher on teacher.dept=dept.id
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q5.csv}
+\end{figure}
+\bigskip
+
+\subsection{Use COALESCE to print the mobile number. Use the number '07986 444 2266' if there is no number given. Show teacher name and mobile number or '07986 444 2266'}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name,
+coalesce (mobile,'07986 444 2266') as newmob
+from teacher
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q6.csv}
+\end{figure}
+\bigskip
+
+\subsection{Use the COALESCE function and a LEFT JOIN to print the teacher name and department name. Use the string 'None' where there is no department.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select teacher.name, coalesce(dept.name,'None') as dept
+from teacher left join dept on teacher.dept=dept.id
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q7.csv}
+\end{figure}
+\bigskip
+
+\subsection{Use COUNT to show the number of teachers and the number of mobile phones.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select count(name) as Total_Teachers,
+count(mobile) as Total_Mobiles 
+from teacher
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q8.csv}
+\end{figure}
+\bigskip
+
+\subsection{Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select dept.name, count(teacher.name) as Total_staff
+from teacher right join dept on teacher.dept=dept.id
+group by dept.name
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q9.csv}
+\end{figure}
+\bigskip
+
+\subsection{Use CASE to show the name of each teacher followed by 'Sci' if the teacher is in dept 1 or 2 and 'Art' otherwise.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name,
+case when dept=1 or dept=2 then 'Sci'
+else 'Art'
+end as Dept
+from teacher
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q10.csv}
+\end{figure}
+\smallskip
+
+\subsection{Use CASE to show the name of each teacher followed by 'Sci' if the teacher is in dept 1 or 2, show 'Art' if the teacher's dept is 3 and 'None' otherwise.}
+\underline{Query:}
+\begin{lstlisting}[showstringspaces=false]
+select name,
+case when dept=1 or dept=2 then 'Sci'
+when dept=3 then 'Art'
+else 'None'
+end as Dept
+from teacher
+\end{lstlisting}
+Output:
+\begin{figure}[H]
+\centering
+\csvautotabular{/home/mouri/DBMS2/DBMS/Week6/q11.csv}
+\end{figure}
 
 
 \end{document}
