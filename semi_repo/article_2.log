@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  28 MAY 2017 15:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  28 MAY 2017 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,17 +583,17 @@ Package pdftex.def Info: /home/mouri/Documents/LaTeX-files/semi_repo/git1.png u
 sed on input line 165.
 (pdftex.def)             Requested size: 125.00175pt x 306.62196pt.
  [3 </home/mouri/Documents/LaTeX-files/semi_repo/git1.png>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
+Underfull \hbox (badness 10000) in paragraph at lines 236--238
 []\T1/pplx/m/n/10 (+20) Sebastopol:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 246--248
 []
  []
 
 
-Overfull \hbox (10.00778pt too wide) in paragraph at lines 247--249
+Overfull \hbox (10.00778pt too wide) in paragraph at lines 246--248
 \T1/pplx/m/n/10 (-20) http://www.catb.org/esr/writings/version-
  []
 
@@ -604,10 +604,10 @@ File: /home/mouri/Documents/LaTeX-files/semi_repo/git2.png Graphic file (type p
 ng)
  <use /home/mouri/Documents/LaTeX-files/semi_repo/git2.png>
 Package pdftex.def Info: /home/mouri/Documents/LaTeX-files/semi_repo/git2.png u
-sed on input line 253.
-(pdftex.def)             Requested size: 135.0011pt x 135.0011pt.
+sed on input line 252.
+(pdftex.def)             Requested size: 185.00468pt x 185.00468pt.
 
-Overfull \vbox (2.11371pt too high) has occurred while \output is active []
+Overfull \vbox (1.71715pt too high) has occurred while \output is active []
 
 
 Overfull \vbox (7.28313pt too high) has occurred while \output is active []
@@ -618,20 +618,20 @@ s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.259 \end{multicols}
+l.258 \end{multicols}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{cite..}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.259 \end{multicols}
+l.258 \end{multicols}
                       </home/mouri/Documents/LaTeX-files/semi_repo/git2.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 261.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 260.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 260.
 
 (./article_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 261.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 260.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 260.
 Package rerunfilecheck Info: File `article_2.out' has not changed.
 (rerunfilecheck)             Checksum: 9F94F9D9D58C08E4E5AC8A68C58843B6;825.
 
@@ -641,12 +641,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 261.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 260.
  ) 
 Here is how much of TeX's memory you used:
  9708 strings out of 493029
  148595 string characters out of 6136235
- 381499 words of memory out of 5000000
+ 380499 words of memory out of 5000000
  12844 multiletter control sequences out of 15000+600000
  63774 words of font info for 244 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -657,7 +657,7 @@ f-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
 latino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on article_2.pdf (5 pages, 160508 bytes).
+Output written on article_2.pdf (5 pages, 160399 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  99 compressed objects within 1 object stream

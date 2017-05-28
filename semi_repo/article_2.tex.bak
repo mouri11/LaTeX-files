@@ -226,8 +226,6 @@ Version control systems for designers, musicians and developers use a common tec
 
 Since such systems maintain the independent activity of an entire team, large companies will be able to collaborate interdepartmentally. Developers will have access to the latest version of the project at all times. It allows for greater efficiency by removing the need for developers to learn design programs and does not rely on designers to confirm changes made by programmers. Changes in design will automatically be delivered in your code. It does not matter what program the user is working with because the common mechanisms are hidden in its depths.
 
-Users can forget about technological incompatibility, lack of space, and loss of data. They will be able to provide impulse creativity in its purest form, will deeply explore new ideas, while increasing their productivity and quality of their work.
-Future version control systems will come soon. The version control system Plant is at the forefront of this evolution.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -239,12 +237,23 @@ Future version control systems will come soon. The version control system Plant 
 Sebastopol: O'Reilly Media, Inc. ISBN 9780596555474. Retrieved 4 September 2015.
 \newblock Mercurial: the Definitive Guide.
  
-\bibitem[Wheeler, David]{O'Sullivan, Bryan (2009)}
+\bibitem[Wheeler, David]{.}
 Retrieved May 8, 2007.
 \newblock Comments on Open Source Software / Free Software (OSS/FS) Software Configuration Management (SCM) Systems".
+\bibitem[Spolsky, Joel (2010-03-17)]{.}
+Retrieved 2010-06-18.
+\newblock "Distributed Version Control is here to stay, baby". Joel on Software.
+\bibitem[Eric Raymond]{.}
+http://www.catb.org/esr/writings/version-control/version-control.html\\
+\newblock Understanding Version-Control Systems (DRAFT)
 \end{thebibliography}
 
-\bibitem[http://www.catb.org/esr/writings/version-control/version-control.html]{}
+\begin{figure}[H]
+\centering
+\includegraphics[width=135pt,height=\textheight,keepaspectratio]{/home/mouri/Documents/LaTeX-files/semi_repo/git2.png}
+\end{figure}
+
+
 %----------------------------------------------------------------------------------------
 
 \end{multicols}
