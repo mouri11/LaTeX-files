@@ -1,7 +1,13 @@
 \BOOKMARK [1][-]{section.1}{Synopsis}{}% 1
 \BOOKMARK [1][-]{section.2}{Introduction}{}% 2
-\BOOKMARK [1][-]{section.3}{Methods}{}% 3
-\BOOKMARK [1][-]{section.4}{Results}{}% 4
-\BOOKMARK [1][-]{section.5}{Discussion}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Subsection One}{section.5}% 6
-\BOOKMARK [2][-]{subsection.5.2}{Subsection Two}{section.5}% 7
+\BOOKMARK [1][-]{section.3}{Benefits}{}% 3
+\BOOKMARK [1][-]{section.4}{Graph Structure}{}% 4
+\BOOKMARK [1][-]{section.5}{Categorizing Version-Control Systems}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Centralized vs. Decentralized}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Conflict resolution}{section.5}% 7
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Locking}{subsection.5.2}% 8
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Merge before commit}{subsection.5.2}% 9
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Commit before merge}{subsection.5.2}% 10
+\BOOKMARK [2][-]{subsection.5.3}{File versus fileset operations.}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.4}{Container identity.}{section.5}% 12
+\BOOKMARK [1][-]{section.6}{Future Prospects}{}% 13
