@@ -50,22 +50,23 @@
 
 \newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
 \hbox{ % Horizontal box
-\hspace*{0.2\textwidth} % Whitespace to the left of the title page
+\hspace*{0.18\textwidth} % Whitespace to the left of the title page
 \rule{1pt}{\textheight} % Vertical line
+\rule{1pt}{\textheight}
 \hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
 \parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
 
 {\noindent\Huge\bfseries Programming Practices \\[0.5\baselineskip] Using C++.}\\[2\baselineskip] % Title
 {\large \textit{-supervised by:}\\\\\Large \textsc Prof. Kaushik Majumdar, and\\\\Prof. Mihir Singh}\\[4\baselineskip] % Tagline or further description
 
-{\Large \textsc{\textbf{Rohit Das}}} % Author name
+{\huge \textsc{Rohit Das}} % Author name
 {\\\\\Large{B. Tech(Computer Sc. and Engg)}\\\\\Large{Roll: 30000114022\\\\\Large{Regn. No.:143000110023}\\\\\Large{5th Semester,2016}}}
 \vspace{120pt} % Whitespace between the title block and the publisher
 \begin{figure}[H]
 \hspace*{100pt}
 \includegraphics[width=90pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/makaut.jpg}
 \end{figure}
-{\noindent \textit{\large{Maulana Abul Kalam Azad University of Technology,\\\\West Bengal\\\\2016}}}\\[\baselineskip] % Publisher and logo
+{\noindent \textit{\large{Maulana Abul Kalam Azad University of Technology,\\\\West Bengal.\\\\}}{\large \LaTeX} \hspace{5pt}2016}\\[\baselineskip] % Publisher and logo
 }}
 \endgroup}
 
@@ -954,96 +955,93 @@ Output:
 #include<cstdio>
 #include<string>
 #include<stdlib.h>
-#include<cmath>
 #define ll long long int
 using namespace std;
-using namespace std;
-class Account{
-    string customer_name,acct_type;
-    ll acct;
+class Staff{
+    string code,name;
     public:
-    Account(){}
-    Account(string a,string b,ll c){
-	customer_name=a;
-	acct_type=b;
-	acct=c;
+    Staff(){}
+    void init(string a,string b){  code=a;  name=b;  }
+    void getS(){
+	cout<<"Code= "<<code<<endl;
+	cout<<"Name= "<<name<<endl;
     }
 };
-class Cur_acct:public Account{
-    double balance,minBal;
+class Teacher:public Staff{
+    string subj,publ;
     public:
-	Cur_acct(double a,double b){
-	    balance=a;
-	    minBal=b;
-	}
-	void withdrawal(int n){
-	    if(balance<minBal)balance-=(balance*0.10);
-	    else if(n>balance)printf("Insufficient balance.\n");
-	    else balance-=n;
-	}
-	void deposit(int n){    balance+=n;	}
-	void cheque(){
-	    cout<<"Deposited by cheque..."<<endl;
-	}
-	void show(){
-	    printf("Current balance=%.2f\n",balance);
-	}
+    Teacher(){}
+    void init1(string c,string d,string a,string b){
+		init(c,d);  subj=a;  publ=b;
+    }
+    void getT(){
+	getS();	cout<<"Subject= "<<subj<<endl;
+	cout<<"Publication= "<<publ<<endl;
+    }
 };
-class Sav_acct:public Account
+class Typist:public Staff{
+    double speed;
+    public:
+    Typist(){}
+    void init1(string a,string b,double d){
+		init(a,b);	speed=d;
+    }
+    void getT2(){
+	getS();
+	cout<<"Speed= "<<speed<<" Words per minute."<<endl;
+    }
+};
+class Officer:public Staff{
+    string grade;
+    public:
+    Officer(){}
+    void init1(string b,string c,string a){
+		init(b,c);	grade=a;
+    }
+    void getO(){
+		getS();	cout<<"Grade= "<<grade<<"\n";
+    }
+};
+class Regular:public Typist{
+    public:
+    Regular(){}
+    void init2(string a,string b,int s){  init1(a,b,s);  }
+    void getR(){	getT2();    }
+};
+class Casual:public Typist
 {
-    double balance;
+    int wages;
     public:
-	Sav_acct(int a){    balance=a;	}
-	void withdrawal(int n){
-	    if(n>balance)printf("Insufficient balance.\n");
-	    else balance-=n;
-	}
-	void deposit(int n){    balance+=n;	}
-	void interest(){    balance+=(balance*0.20);	}
-	void show(){
-	    printf("Current balance:%.2f\n",balance);
-	}
+    Casual(){}
+    void init2(string a,string b,int s,int t)
+    {
+	init1(a,b,s);
+	wages=t;
+    }
+    void getC()
+    {
+	getT2();
+	cout<<"Daily Wages= "<<wages<<endl;
+    }
 };
-int main(){
-    cout<<"Enter type of account(s for savings, c for current):"<<endl;
-    char c;    cin>>c;
-    cout<<"Enter balance:"<<endl;
-    int bal;    cin>>bal;
-    if(c=='c'){
-	cout<<"Enter minimum balance:"<<endl;
-	int minbal;	cin>>minbal;
-	Cur_acct c1(bal,minbal);
-	cout<<"Enter amount to deposit:"<<endl;
-	int n;	cin>>n;
-	cout<<"Do you want to use cheque or cash?(c for cheque).."<<endl;
-	char c;	cin>>c;
-	if(c=='c')c1.cheque();
-	c1.deposit(n);
-	cout<<"Deposited: Rs."<<n<<"\n";	c1.show();
-	cout<<"Enter amount to withdraw:"<<endl;
-	cin>>n;	c1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";
-	c1.show();
-	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
-	c1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";	c1.show();
-    }
-    else{
-	Sav_acct s1(bal);
-	cout<<"Enter amount to deposit:"<<endl;
-	int n;	cin>>n;
-	s1.deposit(n);
-	cout<<"Deposited: Rs."<<n<<"\n";	s1.show();
-	cout<<"Enter amount to withdraw:"<<endl;
-    cin>>n;	s1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";
-	s1.show();
-	cout<<"Enter amount to withdraw:"<<endl;	cin>>n;
-	s1.withdrawal(n);
-	cout<<"Withdrawal: Rs."<<n<<"\n";	s1.show();	
-	cout<<"Adding interest of 0.20 to current balance:"<<endl;
-	s1.interest();	s1.show();
-    }
+int main()
+{
+    Teacher t;
+    cout<<"Staff: Teacher"<<endl;
+    t.init1("0001","A","Maths","Srijan");
+    t.getT();
+    Officer o;
+    cout<<"Staff: Officer"<<endl;
+    o.init1("1001","B","A");
+    o.getO();
+    cout<<"Staff: Typist(Regular)"<<endl;
+    Regular r;
+    r.init2("2001","C",30);
+    r.getR();
+    cout<<"Staff: Typist(Casual)"<<endl;
+    Casual c;
+    c.init2("2002","D",30,10000);
+    c.getC();
     return 0;
 }
 \end{lstlisting}
