@@ -1,0 +1,218 @@
+\documentclass[a4paper,11pt]{article}
+
+\renewcommand\thesection{\arabic{section}.}
+
+\usepackage{tocloft}
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+\setcounter{tocdepth}{10}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{fullpage}
+
+\usepackage{float}
+
+\usepackage{amsfonts}
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{14}{15}\selectfont}
+
+\usepackage{graphicx}
+\usepackage[margin=0.6in,includefoot,headsep=0.1in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\rfoot{P. T. O.}
+\lfoot{ROHIT DAS 30000114022}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+%\usepackage{array}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\lstset { %
+    language=C,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\large,% basic font setting
+}
+
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\hbox{ % Horizontal box
+\hspace*{0.18\textwidth} % Whitespace to the left of the title page
+\rule{1pt}{\textheight} % Vertical line
+\rule{1pt}{\textheight}
+\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+
+{\noindent\Huge\bfseries Computer Networks}\\[2\baselineskip] % Title
+{\large \textit{-supervised by:}\\\\\Large \textsc Prof. Saikat Basu, and\\\\Prof. Subhanjan Sarkar}\\[4\baselineskip] % Tagline or further description
+
+{\huge \textsc{Rohit Das}} % Author name
+{\\\\\Large{B. Tech(Computer Sc. and Engg)}\\\\\Large{Roll: 30000114022\\\\\Large{Regn. No.:143000110023}\\\\\Large{6th Semester,2016}}}
+\vspace{120pt} % Whitespace between the title block and the publisher
+\begin{figure}[H]
+\hspace*{100pt}
+\includegraphics[width=90pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/makaut.jpg}
+\end{figure}
+{\noindent \textit{\large{Maulana Abul Kalam Azad University of Technology,\\\\West Bengal.\\\\}}{\large \LaTeX} \hspace{5pt}2017}\\[\baselineskip] % Publisher and logo
+}}
+\endgroup}
+
+\begin{document}
+%\pagestyle{empty} % Removes page numbers
+\thispagestyle{empty}
+\titleGM % This command includes the title page
+
+\iffalse
+\title{\textbf{\Huge Maulana Abul Kalam Azad University of\\[10pt] Technology}}
+\date{\vspace{-5ex}}
+\maketitle
+\begin{center}
+\textbf{\LARGE{(C++ Assignment)}}
+\end{center}
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/Pictures/makaut.jpg}
+\end{figure}
+.
+
+\begin{flushright}
+\underline{\textbf{\author{\Huge Rohit Das}}}\\
+\textbf{\LARGE{
+B. Tech(CSE),5th Year\\
+Roll No.: 3000114022\\
+Regn. No.: 143000110023\\
+Taught by: Prof. Kaushik Majumdar/ Prof. Mihir Singh\\
+}}
+\end{flushright}
+%\tableofcontents
+%\begin{table}[htbp]
+%\centering
+\fi
+
+\tableofcontents
+\break
+
+\section{Date: 14/4/2017}
+\subsection{Write a C program to implement chat server and client using TCP.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/echoserver.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/echoclient.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/tcp.png}
+\end{figure}
+
+\bigskip
+
+\bigskip
+
+\section{Date: 21/4/2017}
+\subsection{Write a program to implement chat server and client using UDP.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/userver.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/uclient.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/udp.png}
+\end{figure}
+
+\bigskip
+
+\bigskip
+
+\section{Date: 28/4/2017}
+\subsection{Write a program to implement Math server and client using TCP.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/mserver.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/mclient.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/math.png}
+\end{figure}
+.
+
+
+\subsection{Write a program to implement day-time chat server and client using TCP.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/dserver.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/dclient.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/day.png}
+\end{figure}
+.
+
+\section{Date: 5/5/2017}
+\subsection{Write a program to implement concurrent server and client using TCP.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/conserver.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/conclient.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/conc.png}
+\end{figure}
+.
+
+\section{Date: 12/5/2017}
+\subsection{Write a program to implement file server and client using TCP.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/fsrvr.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/fclnt.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/file.png}
+\end{figure}
+.
+
+\section{19/5/2017}
+\subsection{Write a program to implement multicast server and client.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/multisrvr.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/multiclnt.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/multi.png}
+\end{figure}
+.
+
+
+\subsection{Write a program to implement broadcast server and client.}
+\underline{Program:}
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/broadclnt.c}
+
+\lstinputlisting[showstringspaces=false]{/home/mouri/networking/latex/broadsrvr.c}
+Output:
+\begin{figure}[H]
+\centering
+\includegraphics[width=350pt,height=\textheight,keepaspectratio]{/home/mouri/networking/latex/broad.png}
+\end{figure}
+.
+
+\end{document}
