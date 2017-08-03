@@ -1,6 +1,0 @@
-\documentclass[11pt]{article}
-\begin{document}
-Hello. This is my first LaTex document!! :)
-
-I want to add and multiply $(x+1)$ and $(x+3)$.
-\end{document}
