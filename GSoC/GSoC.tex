@@ -71,14 +71,14 @@
 \makeatother
 
 % Customizing footer
-%\makeatletter
-%\def\ps@pprintTitle{%
-% \let\@oddhead\@empty
-% \let\@evenhead\@empty
-% \def\@oddfoot{\leftline{GSoC KDE 2018}}%
-% \let\@evenfoot\@oddfoot
-% }
-%\makeatother
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{\leftline{\textit{GSoC KDE 2018 \hspace{115mm}\today}}}
+ \let\@evenfoot\@oddfoot
+ }
+\makeatother
 
 \usepackage[left=2cm, right=2cm, top=2.5cm, bottom=2cm, footskip=1cm]{geometry}
 
@@ -390,27 +390,16 @@
 		\item Concepts of serial and parallel circuits shall be introduced next. Levels shall be particularly allotted for this purpose.
 		
 		\item For capacitors, children shall be taught what a capacitor does, i.e. store electricity, and hence how it is different from  a battery. A simple circuit can be depicted in images, consisting of a bulb which will slowly dim out on disconnecting from a DC cell, as it will be connected to a capacitor in parallel.
-		
-		%\item For solenoids, a tutorial level will be included where magnetism will be exhibited as follows: a solenoid connected with a battery will be shown. An image of iron nails kept nearby shall be animated to move nearer the solenoid, depicting attraction. In the tutorial, a brief description of a magnet and why it attracts only certain materials.
+
 	\end{itemize}
 \end{itemize}
 }\\
 \hline
 
-%{June 16 - June 25} & \par
-%\parbox{12cm}{
-%\begin{itemize}[noitemsep, topsep=2pt]
-	%\begin{itemize}[noitemsep, topsep=2pt]
-		%\item For solenoids, a tutorial level will be included where magnetism will be exhibited as follows: a solenoid connected with a battery will be shown. An image of iron nails kept nearby shall be animated to move nearer the solenoid, depicting attraction. In the tutorial, a brief description of a magnet and why it attracts only certain materials.
-	%\end{itemize}
-%\end{itemize}
-%}\\
-%\hline
-
  & \par
  \parbox{12cm}{
 	\begin{itemize}[noitemsep, topsep=2pt]
-		\item 
+		\item[] 
 		\begin{itemize}[noitemsep, topsep=2pt]
 			\item For solenoids, a tutorial level will be included where magnetism will be exhibited as follows: a solenoid connected with a battery will be shown. An image of iron nails kept nearby shall be animated to move nearer the solenoid, depicting attraction. In the tutorial, a brief description of a magnet and why it attracts only certain materials.
 		\end{itemize}

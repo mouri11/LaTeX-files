@@ -53,7 +53,7 @@
 \newcommand\nrd{\textsuperscript{rd}\xspace}
 
 {\title{\textbf{Debugging LibreOffice for Android}}
-\author{ \large{Rohit Das} \\ +918961452125 | rohit.das950@gmail.com\\ Serampore, Hooghly, West Bengal, India. GMT+5:30}
+\author{ Difficulty:Medium\\\\\large{Rohit Das} \\ Freenode IRC nick: rohit\\+918961452125 | rohit.das950@gmail.com\\ Serampore, Hooghly, West Bengal, India. GMT+5:30}
 \date{}
 
 \parindent30pt
@@ -79,7 +79,12 @@ I believe in what LibreOffice stands for and would like to offer a helping hand 
 \item[$\bullet$ Bug \hspace{5pt}$88389$]: Android document browser: there is no way to access external storage.
 \end{description}
 
-\section*{EasyHacks}
+\section*{Mentors}
+Miklos Vajna, IRC: vmiklos mail: vmiklos @ collabora.co.uk\\
+Tomaž Vajngerl, IRC: quikee mail: tomaz.vajngerl @ collabora.co.uk
+
+
+%\section*{EasyHacks}
 
 \section*{Implementation}
 \hspace{20pt} Having used Android Studio to a certain extent for most of my Android apps, I will be much more flexible in debugging LibreOffice for Android in the same. Below is the timeline which I am presenting to show how I will divide my work along with my studies:
