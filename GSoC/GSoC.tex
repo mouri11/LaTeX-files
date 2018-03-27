@@ -241,7 +241,7 @@
 				\item[$\square$] {The external library, available at \href{https://github.com/Aerlinger/maxwell}{https://github.com/Aerlinger/maxwell}, although implements various analog components, cannot be directly used here, as Qt Quick does not support js classes. So this library shall be solely used for technical lookups and taking ideas on how to better implement components. Most of the ideas below have been formulated after a thorough observation of the repository.}
 				
 					\begin{itemize}
-					\item {Since js classes aren’t available in Qt, each component will be implemented with its own separate js file, and exported as a module to be used in circuits.}
+					\item {Since js classes are not available in Qt, each component will be implemented with its own separate js file, and exported as a module to be used in circuits.}
 					
 					\item {A base circuit component file shall be shared among all other components, containing basic features like resistance, voltage, etc. and functions to calculate the values of the attributes, as well as rendering them on screen.}
 					
@@ -291,6 +291,13 @@
 			\item[$\square$] {Levels shall be presented in tutorial mode only, so that children can get help to progressively learn the various components and their functions. In free mode, all components shall be available for practice and experimentation.}
 			
 			\item[$\square$] {Components mentioned earlier will be introduced into the activity at a much later stage, since these will require a much thorough knowledge even for using in a basic circuit.}
+			\end{itemize}
+			
+		\item[$\blacksquare$] \textbf{Unit Testing and Documentation:}
+			\begin{itemize}
+			\item[$\square$] {The framework to automate unit testing will be developed in GSoC 18 most probably, so unit testing will be handled by that.}
+			
+			\item[$\square$] {Comments mentioning the function of various methods and variables will be put in the code as necessary.}
 			\end{itemize}
 		\end{itemize}
 \bigskip\bigskip
@@ -387,25 +394,24 @@
 \parbox{12cm}{
 \begin{itemize}[noitemsep, topsep=2pt]
 	\item Work on developing tutorials easy enough to be understood by children. The tutorials shall be built first so as to give an insight on how to proceed to make future components next.
-
 	\begin{itemize}[noitemsep, topsep=2pt]
 		\item Tutorials for resistors shall consist of pictures depicting what and why of a resistor, followed by how to use them, and analogies to taps being used to restrict water flow similar to resistors restricting current flow.
-		
-		\item Concepts of serial and parallel circuits shall be introduced next. Levels shall be particularly allotted for this purpose.
-		
-		\item For capacitors, children shall be taught what a capacitor does, i.e. store electricity, and hence how it is different from  a battery. A simple circuit can be depicted in images, consisting of a bulb which will slowly dim out on disconnecting from a DC cell, as it will be connected to a capacitor in parallel.
-
 	\end{itemize}
 \end{itemize}
 }\\
 \hline
 
- & \par
- \parbox{12cm}{
+  & \par
+\parbox{12cm}{
+\begin{itemize}[noitemsep, topsep=2pt]
+	\item[] 
 	\begin{itemize}[noitemsep, topsep=2pt]
-		\item[] 
-		\begin{itemize}[noitemsep, topsep=2pt]
-			\item For solenoids, a tutorial level will be included where magnetism will be exhibited as follows: a solenoid connected with a battery will be shown. An image of iron nails kept nearby shall be animated to move nearer the solenoid, depicting attraction. In the tutorial, a brief description of a magnet and why it attracts only certain materials.
+		
+		\item Concepts of serial and parallel circuits shall be introduced next. Levels shall be particularly allotted for this purpose.
+		
+		\item For capacitors, children shall be taught what a capacitor does, i.e. store electricity, and hence how it is different from  a battery. A simple circuit can be depicted in images, consisting of a bulb which will slowly dim out on disconnecting from a DC cell, as it will be connected to a capacitor in parallel.
+
+		\item For solenoids, a tutorial level will be included where magnetism will be exhibited as follows: a solenoid connected with a battery will be shown. An image of iron nails kept nearby shall be animated to move nearer the solenoid, depicting attraction. In the tutorial, a brief description of a magnet and why it attracts only certain materials.
 		\end{itemize}
 	\end{itemize}	 
  }\\
@@ -482,26 +488,26 @@
 \label{S:1}
 {I am currently in my final year at Maulana Abul Kalam Azad University of Technology (formerly WBUT), Kolkata, pursuing B. Tech. in Computer Science and Engineering. I have been contributing to the Qt version of GCompris since September 2017. Some of my contributions are:}
 \begin{itemize}
-\item {Removed dependency of ball direction on mouse buttons in Penalty activity:\\
+\item {Removed dependency of ball direction on mouse buttons in \textit{Penalty} activity:\\
 \href{https://cgit.kde.org/gcompris.git/commit/?id=c94d7454c5a05364a1cbeae5b0bd1bed552ae5ed}{https://cgit.kde.org/gcompris.git/commit/?id=c94d7454c5a05364a1cbeae5b0bd1bed552ae5ed}}
 
-\item {Progress bar corresponding to click zone only will be animated in Penalty activity:\\
+\item {Progress bar corresponding to click zone only will be animated in \textit{Penalty} activity:\\
  \href{https://cgit.kde.org/gcompris.git/commit/?id=e5b68f68657cf1ac25a6aa31924acfaf4a180f0b}{https://cgit.kde.org/gcompris.git/commit/?id=e5b68f68657cf1ac25a6aa31924acfaf4a180f0b}}
 
-\item {Added easy mode in Letter-In-Word activity:\\
+\item {Added easy mode in \textit{Letter-In-Word} activity:\\
 \href{https://cgit.kde.org/gcompris.git/commit/?id=c48f7057c27166edc6b8297bb3518a10ec2ee31b}{https://cgit.kde.org/gcompris.git/commit/?id=c48f7057c27166edc6b8297bb3518a10ec2ee31b}}
 
-\item {Improved layout in Hangman activity:\\
+\item {Improved layout in \textit{Hangman} activity:\\
 \href{https://cgit.kde.org/gcompris.git/commit/?id=6a66cd44106015bd369616574d656a8dd19d15be}{https://cgit.kde.org/gcompris.git/commit/?id=6a66cd44106015bd369616574d656a8dd19d15be}}
 
-\item {Fixed coding style issues for Ascending-Order activity:\\
+\item {Fixed coding style issues for \textit{Ascending-Order} activity:\\
 \href{https://cgit.kde.org/gcompris.git/commit/?id=ade955e042ceb9774459a1181382159606a31502}{https://cgit.kde.org/gcompris.git/commit/?id=ade955e042ceb9774459a1181382159606a31502}}
 
-\item {Added option to change case of letter to find in Letter-In-Word activity:\\
+\item {Added option to change case of letter to find in \textit{Letter-In-Word} activity:\\
 \href{https://commits.kde.org/gcompris/7c769594a5372e560904511404e2d1e156904050}{https://commits.kde.org/gcompris/7c769594a5372e560904511404e2d1e156904050}}
 \end{itemize}
 \bigskip
-\textbf{Website: }\href{mouri11.github.io}{mouri11.github.io}\\
+\textbf{Website: }\href{https://mouri11.github.io}{https://mouri11.github.io}\\
 \textbf{Contact Info:}\\
 \textbf{Email: }{Rohit Das $[$rohit.das950@gmail.com$]$}\\
 \textbf{IRC Nick: } mouri11
