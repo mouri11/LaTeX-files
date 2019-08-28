@@ -1,0 +1,273 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, left = 1.5cm, right = 1.5cm, top = 1.5cm, bottom = 1.5cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+
+\usepackage{karnaugh-map}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+	language = Python,
+	backgroundcolor=\color{black!5}, % set backgroundcolor
+}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\renewcommand\thesection{\arabic{section}.}
+
+\usepackage{tocloft}
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{\fill}
+\huge CS553: Cryptography\\
+\LARGE Assignment 4: Solutions\\
+\Large Rohit Das (11910230)\\\vspace{0.8cm}
+\today
+\vspace*{\fill}
+\end{titlepage}
+
+\section{Fiestal and SPN}
+\begin{large}
+\subsection{Fiestal Ciphers}
+\begin{itemize}[itemsep=-1ex, topsep=-1ex]
+\item \textbf{Blowfish:}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 64 bits
+	\item Key Size: 32 - 448 bits
+	\item Susceptible to $2^{nd}$-order differential attack.
+	\end{itemize}
+	
+\item \textbf{Data Encryption Standard (DES):}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 64 bits
+	\item Key Size: 56 bits (+8 parity bits)
+	\item Considered insecure because of feasibility of brute-force attacks.
+	\end{itemize}
+	
+\item \textbf{Rivest Cipher (RC5):}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 32/64 (suggested)/128 bits
+	\item Key Size: 0 - 2040 bits (128 bits suggested)
+	\item Susceptible to differential attacks using $2^{44}$ plaintexts.
+	\end{itemize}
+	
+\item \textbf{Information Concealment Engine (ICE):}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 64 bits
+	\item Key Size: 64 bits
+	\item Differential attacks can break 15 of 16 rounds with complexity $2^{56}$.
+	\end{itemize}
+	
+\item \textbf{KASUMI:}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 64 bits
+	\item Key Size: 128 bits
+	\end{itemize}
+
+\end{itemize}
+
+\subsection{Substitution-Permutation Network (SPN)}
+\begin{itemize}[itemsep=-1ex, topsep=-1ex]
+
+\item \textbf{Advanced Encryption Standard (AES):}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 128 bits
+	\item Key Size: 128/192/256 bits
+	\item For AES-128, key can be recovered with complexity $2^{126.1}$ (biclique attack).
+	\end{itemize}
+	
+\item \textbf{3-Way:}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 96 bits
+	\item Key Size: 96 bits
+	\item Vulnerable to related key cryptanalysis.
+	\end{itemize}
+	
+\item \textbf{Kuznyechik:}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 128 bits
+	\item Key Size: 256 bits
+	\item Vulnerable to meet-in-the-middle attack on 5 rounds.
+	\end{itemize}
+	
+\item \textbf{SAFER K-64 (Safer And Faster Encryption Routine):}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 64 bits
+	\item Key Size: 64 bits
+	\end{itemize}
+	
+\item \textbf{Square:}
+	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
+	\item Block Size: 96 bits
+	\item Key Size: 96 bits
+	\item Precursor to AES.
+	\end{itemize}
+	
+\end{itemize}
+
+\end{large}
+
+\section{Random SBox (4-bit)}
+\begin{large}
+Python code (Python 3): Random\textunderscore s-box\textunderscore gen.py
+\lstinputlisting[language = Python, showstringspaces=false]{./python_code/Random_s-box_gen.py}
+
+The S-Box to be used subsequently is as follows:
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & a & b & c & d & e & f\\\hline
+$S(x)$ & 5 & 4 & d & 1 & 2 & f & 6 & 0 & 8 & c & b & 9 & 7 & e & a & 3\\\hline
+\end{tabular}
+
+\end{center}
+\end{large}
+\vspace{0.5cm}
+
+\section{Differential Distribution Table (DDT)}
+\begin{large}
+
+Python code (Python 3): DDT\textunderscore s-box.py
+
+\lstinputlisting[language = Python, showstringspaces=false]{./python_code/DDT_s-box.py}
+
+The generated DDT is as follows:
+\begin{center}
+
+\begin{tabular}{c||p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}p{0.5cm}}
+
+in\textbackslash out & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & a & b & c & d & e & f\\\hline
+0& 16& -& -& -& -& -& -& -& -& -& -& -& -& -& -& - \\
+1&  -& 2& 2& -& 2& -& 2& -& -& 4& -& -& 2& 2& -& - \\
+2&  -& -& -& 2& 2& 4& -& -& 2& -& -& -& -& 4& -& 2 \\
+3&  -& 2& 2& -& 6& -& -& 2& -& 4& -& -& -& -& -& - \\
+4&  -& 4& 2& -& -& -& -& 2& -& -& 2& 4& -& -& -& 2 \\
+5&  -& -& -& 2& -& -& 4& 2& 2& -& 2& 2& -& 2& -& - \\
+6&  -& -& 2& 2& 2& -& -& 2& -& -& -& -& 2& -& 2& 4 \\
+7&  -& -& 4& 2& -& 4& 2& -& -& -& -& 2& -& -& 2& - \\
+8&  -& 2& -& 2& -& 2& 2& -& 4& -& -& -& 2& 2& -& - \\
+9&  -& -& -& -& 2& 2& -& -& 2& 2& 4& -& 4& -& -& - \\
+a&  -& 2& -& -& -& 2& -& -& 2& -& -& -& 2& 4& 4& - \\
+b&  -& 4& -& -& -& 2& -& 2& 2& 2& -& -& 2& -& -& 2 \\
+c&  -& -& 4& 2& -& -& -& 2& -& 2& 4& -& -& 2& -& - \\
+d&  -& -& -& 2& -& -& -& 2& -& -& -& 6& -& -& 4& 2 \\
+e&  -& -& -& -& -& -& 2& 2& -& 2& 2& -& 2& -& 2& 4 \\
+f&  -& -& -& 2& 2& -& 4& -& 2& -& 2& 2& -& -& 2& - \\
+\end{tabular}
+
+\end{center}
+
+Actual output(file): output.txt
+
+The maximum differential probability of this S-Box is $\dfrac{6}{16}$ for the (input,output) difference transactions (3,4) and (d,b).
+
+\end{large}
+
+\section{SBox as a Boolean Function}
+\begin{large}
+
+The Boolean table for the above S-Box is as follows:\\
+
+\begin{center}
+
+\begin{tabular}{|c|cccc|p{1cm}|p{1cm}|p{1cm}|p{1cm}|c|}
+\hline
+$x$ & $x_0$ & $x_1$ & $x_2$ & $x_3$ & $y_0$ & $y_1$ & $y_2$ & $y_3$ & $y = S[x]$\\\hline
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 5\\\hline
+1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 4\\\hline
+2 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & d\\\hline
+3 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1\\\hline
+4 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 2\\\hline
+5 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & f\\\hline
+6 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 6\\\hline
+7 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0\\\hline
+8 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 8\\\hline
+9 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & c\\\hline
+a & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & b\\\hline
+b & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 9\\\hline
+c & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 7\\\hline
+d & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & e\\\hline
+e & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & a\\\hline
+f & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 3\\\hline
+
+\end{tabular}
+
+\end{center}
+
+\newpage
+The 4 K-maps for the variables are as follows:
+
+\begin{karnaugh-map}[4][4][1][$X_2X_3$][$X_0X_1$]
+
+\minterms{2,5,8,9,10,11,13,14}
+\autoterms[0]
+\implicant{8}{10}
+\implicant{5}{13}
+\implicant{14}{10}
+\implicantedge{2}{2}{10}{10}
+
+\end{karnaugh-map}\hspace{2cm}
+\begin{karnaugh-map}[4][4][1][$X_2X_3$][$X_0X_1$]
+
+\minterms{0,1,2,5,6,9,12,13}
+\autoterms[0]
+\implicant{1}{9}
+\implicant{12}{13}
+\implicant{0}{1}
+\implicant{2}{6}
+
+\end{karnaugh-map}
+
+\vspace{-1cm}
+\hspace{0.5cm}$y_0 = \sum (2,5,8,9,10,11,13,14)$ \hspace{3.25cm}$y_1 = \sum (0,1,2,5,6,9,12,13)$
+\vspace{1cm}
+
+\begin{karnaugh-map}[4][4][1][$X_2X_3$][$X_0X_1$]
+
+\minterms{4,5,6,10,12,13,14,15}
+\autoterms[0]
+\implicant{12}{14}
+\implicant{4}{5}
+\implicant{6}{14}
+\implicant{14}{10}
+
+\end{karnaugh-map}\hspace{2cm}
+\begin{karnaugh-map}[4][4][1][$X_2X_3$][$X_0X_1$]
+
+\minterms{0,2,3,5,10,11,12,15}
+\autoterms[0]
+\implicantedge{3}{2}{11}{10}
+\implicantedge{0}{0}{2}{2}
+\implicant{15}{11}
+\implicant{5}{5}
+\implicant{12}{12}
+
+\end{karnaugh-map}
+
+\vspace{-1cm}
+\hspace{0.25cm}$y_2 = \sum (4,5,6,10,12,13,14,15)$ \hspace{2.75cm}$y_3 = \sum (0,2,3,5,10,11,12,15)$
+\vspace{1cm}
+
+The formulas for the variables are as follows:\\
+$y_0 = \sum (2,5,8,9,10,11,13,14) = x_0x_1^{'} + x_1x_2^{'}x_3 + x_0x_2x_3^{'} + x_1^{'}x_2x_3^{'}$\\
+$y_1 = \sum (0,1,2,5,6,9,12,13) = x_2^{'}x_3 + x_0^{'}x_1^{'}x_2^{'} + x_0^{'}x_2x_3^{'} + x_0x_1x_2^{'}$\\
+$y_2 = \sum (4,5,6,10,12,13,14,15) = x_0x_1 + x_0^{'}x_1x_2^{'} + x_1x_2x_3^{'} + x_0x_2x_3^{'}$\\
+$y_3 = \sum (0,2,3,5,10,11,12,15) = x_1^{'}x_2 + x_0^{'}x_1^{'}x_3^{'} + x_0^{'}x_2x_3 + x_0^{'}x_1x_2^{'}x_3 + x_0x_1x_2^{'}x_3^{'}$\\
+
+\end{large}
+\end{document}
