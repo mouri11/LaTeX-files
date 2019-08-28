@@ -1,0 +1,140 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.035} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=18mm,bottom=18mm,left=12mm,
+right=12mm,columnsep=15pt]{geometry} % Document margins
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+%\usepackage{fancyhdr} % Headers and footers
+%\pagestyle{fancy} % All pages have headers and footers
+%\fancyhead{} % Blank out the default header
+%\fancyfoot{} % Blank out the default footer
+%\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+%\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{A Review of\\ Adversarial Machine Learning\\ 
+\huge{(4th ACM Workshop on AISec, Oct. 2011,43-58)}} % Article title
+\author{%
+\Large \textsc{Rohit Das}\\ % Your name
+\large ID No.: 11910230\\
+\large M. Tech. (CSE)\\
+Reviewers: Dr. Sk Subidh Ali, and Dr. Subhajit Sidhanta
+}
+\date{\today} % Leave empty to omit a date
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Summary}
+
+\lettrine[nindent=0em,lines=3]{T} he manuscript by Huang et. al. focuses primarily on the security fault lines in modern Machine Learning, how they can be utilized to break into secure learning systems, and manipulate data and users. It also sequentially outlines how such situations can be avoided by keeping some points in mind while designing a new or improving an existing learning algorithm or model, forming the crux of Adversarial Machine Learning.
+
+
+%------------------------------------------------
+
+\section{Outline}
+
+Listed below are the milestones covered by the paper: 
+\begin{itemize}
+\item A very well-summarized overview of what Adversarial Machine Learning is, why it is necessary and relevant in this age, and how it can be accomplished.
+
+\item Taxonomy of influence, security violations and specificity of attack by a potential adversary on a learning system.
+
+\item Modeling secure learning systems as a game between an attacker and a defender, and how both can influence the learning algorithm, learning and evaluation of data, as well as the data itself. It also subtly creates the idea that a learning model can be made more robust by artificially creating an adversary and training the model with it.
+
+\item An elaborate section on Causative attacks to learning systems, well-documented with graphs and data. It also contains case studies on two algorithms: SpamBayes and Principal Component Analysis (PCA)-based anomalous network traffic detector. The authors have highlighted the strengths of an attacker given certain degrees of freedom, and how they can be countered.
+
+\item A section on Exploratory attacks, discussing various evasion techniques, theoretical and practical, and how the most optimum evasion techniques are not the ones generally implemented in real time.
+
+\item Privacy violations, and advantages and roles of randomization of functions and parameters in learning models.
+\end{itemize}
+
+%------------------------------------------------
+
+\section{Best Elements}
+Below mentioned are the best elements of the paper:
+\begin{itemize}
+\item All conclusions, facts and experiments have been well-supported with relevant data and graphs. The graphs clearly highlight the differences between using a robust and a non-secure learning model.
+
+\item The paper mainly focuses on causative attacks, the most malicious of attacks, and extensive research has been done into its types, variants and countermeasures.
+
+\item The two algorithms used as case studies are very much used in real life situations, and hence makes the paper very relevant in this day and age, thereby easily underlining the need for the topic researched on.
+
+\item Privacy, being a trending concept throughout history and a fundamental human right, is also a part of this paper, and makes it a must-read for researchers in this field.
+\end{itemize}
+%------------------------------------------------
+%
+\section{Limitations}
+\begin{itemize}
+\item A section on image and pattern recognition, and how adversaries can trick such models, could have been made a part of the research, as it is a budding novel area in Machine Learning, and specifically, Deep Learning.
+\item The paper is a bit too textual. Adding more images would have helped better illustrate the various attacks and countermeasures presented here.
+\end{itemize}
+%
+%-----------------------------------------------------------------------
+%
+\section{Opinion}
+~~~~~The paper gives a good introduction and an elaborate explanation on Adversarial Machine Learning, and how to counter it. It aptly highlights the necessity and relevance of securing learning models, especially when they will be planned to be used in mission-critical situations. However, a more generous use of images would've helped illustrate the attacks and countermeasures better.
+%
+%-----------------------------------------------------------------------
+
+\end{document}
