@@ -1,0 +1,227 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, left = 2cm, right = 2cm, top = 2cm, bottom = 2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+	language = Python,
+	backgroundcolor=\color{black!5}, % set backgroundcolor
+}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\renewcommand\thesection{\arabic{section}.}
+
+\usepackage{tocloft}
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+\setcounter{tocdepth}{2}
+
+%\title{CS553: Cryptography \\
+%		Assignment 3 - Solutions\\\vspace{1cm}}
+%\author{Rohit Das (11910230)}
+
+\begin{document}
+%\maketitle
+%\newpage
+\begin{titlepage}
+\centering
+\vspace*{\fill}
+\huge CS553: Cryptography\\
+\LARGE Assignment 3: Solutions\\
+\Large Rohit Das (11910230)\\\vspace{0.8cm}
+\today
+\vspace*{\fill}
+\end{titlepage}
+
+\section{CCA-Security}
+\begin{large}
+
+Formally, for any list of plaintexts $m_1,m_2,...,m_n \in \mathcal{P}$ and ciphertexts $c_1,c_2,...,c_n$ $\in \mathcal{C}$ chosen by adversary, even with knowledge of corresponding ciphertexts $e_K(m_1)$, $e_K(m_2),...,e_K(m_n)$ and corresponding plaintexts $d_K(c_1),d_K(c_2),...,d_K(c_n)$, it is very difficult to decrypt any ciphertext not present in the above list of ciphertexts without knowing the key.
+\end{large}
+
+\section{Hill Cipher}
+\begin{large}
+\subsection{Encryption}
+Name: ROHIT DAS. First four letters = \{R,O,H,I\} = \{17,14,7,8\} [$\because$ taking A = 0, B = 1 and so on].
+Then $x$ = 
+$\begin{pmatrix}
+17&14\\7&8
+\end{pmatrix}$.
+Given key K = $\begin{pmatrix}
+11&8\\3&7
+\end{pmatrix}$,\\ 
+ciphertext $y$ = $xK$ = 
+$\begin{pmatrix}
+17&14\\7&8
+\end{pmatrix}
+\times
+\begin{pmatrix}
+11&8\\3&7
+\end{pmatrix}$ mod 26\\
+= $\begin{pmatrix}
+17\times11+14\times3 & 17\times8+14\times7\\
+7\times11+8\times3 & 7\times8+8\times7
+\end{pmatrix}$ mod 26
+= $\begin{pmatrix}
+21&0\\23&8
+\end{pmatrix}$
+= \{V,A,X,I\}.\\
+$\therefore y = e_K(x)$ = VAXI.
+
+\subsection{Inverse Key}
+$|K|$ = $11\times7-3\times8$ mod 26 = 53 mod 26 = 1.\\
+Adjoint of K
+= $\begin{pmatrix}
+7&-8\\-3&11
+\end{pmatrix}$.
+$\therefore K^{-1}$
+= $\dfrac{1}{|K|}\times$ Adjoint of K 
+=$\begin{pmatrix}
+7&-8\\-3&11
+\end{pmatrix}$
+
+\subsection{Invertible?}
+K can be said to be invertible only if $|K| \ne$ 0. Since $|K|$ = 53 $\ne$ 0, K is invertible.
+
+\subsection{Decryption}
+We calculated y
+= $\begin{pmatrix}
+21&0\\23&8
+\end{pmatrix}$. Now, $x$ = $d_K(y)$ = $yK^{-1}$.\\
+$\therefore y$
+=$\begin{pmatrix}
+21&0\\23&8
+\end{pmatrix}
+\begin{pmatrix}
+7&-8\\-3&11
+\end{pmatrix}$
+=$\begin{pmatrix}
+21\times7+0\times(-3) & 21\times(-8)+0\times11\\
+23\times7+8\times(-3) & 23\times(-8)+8\times11
+\end{pmatrix}$mod 26\\
+= $\begin{pmatrix}
+147&-168\\137&-96
+\end{pmatrix}$ mod 26
+= $\begin{pmatrix}
+17&14\\7&8
+\end{pmatrix}$ = \{R,O,H,I\}.\\
+$\therefore x$ = $d_K(y)$ = ROHI.
+
+\end{large}
+
+\section{Theorem(Perfect Secrecy): Proof}
+\begin{large}
+\subsection{Proof 1:}
+Suppose the given cryptosystem provides perfect secrecy. If \textbf{Pr}$[x_0]$ = 0, for some $x_0 \in \mathcal{P}$, it trivially follows that \textbf{Pr}$[x_0|y]$ = \textbf{Pr}$[x_0]$ for all $y \in \mathcal{C}$. Hence, we will only consider those plaintext elements where \textbf{Pr}$[x_0] >$ 0. Hence, it follows, using Bayes' theorem, that \textbf{Pr}$[x|y]$ = \textbf{Pr}$[x]$ $\forall y \in \mathcal{C}$ is equivalent to \textbf{Pr}$[y|x]$ = \textbf{Pr}$[y]$ $\forall y \in \mathcal{C}$.
+
+Assuming \textbf{Pr}$[y] >$ 0 $\forall y \in \mathcal{C}$ ($\because$ if \textbf{Pr}$[y]$ = 0, then y is never used and can be omitted here), if we fix any $x \in \mathcal{P}$, for each $y \in \mathcal{C}$, \textbf{Pr}$[y|x]$ = \textbf{Pr}$[y] >$ 0. Hence, there must be at least one key K such that $e_K(x)$ = $y$ . It follows that $|\mathcal{K}| > |\mathcal{C}|$. So we have the inequalities
+\begin{center}
+$|\mathcal{C}| = |\{e_K(x):K \in \mathcal{K}\}| \le$ $|\mathcal{K}|$.
+\end{center}
+But since we are assuming $|\mathcal{C}| = |\mathcal{K}|$ [$\because$ perfect secrecy],
+\begin{center}
+$|\{e_K(x):K \in \mathcal{K}\}|$ = $|\mathcal{K}|$.
+\end{center}
+This shows that there doesn't exist two keys $K_1$ and $K_2$ such that $e_{K_1}(x)$ = $e_{K_2}(x)$. Hence, there is only one unique key K such that $e_K(x)$ = $y$. \textbf{(Proved)}
+
+\subsection{Proof 2:}
+Let $n$ = $|\mathcal{K}|$. Let $\mathcal{P}$ = \{$x_i:1 \le i \le n$\} and fix a ciphertext element $y \in \mathcal{C}$. Then the keys will be $K_1, K_2,...,K_n$ such that $e_{K_i}(x_i)$ = $y$, $1 \le i \le n$. Using Bayes' theorem,
+
+\begin{align*}
+\textbf{Pr}[x_i|y] &= \dfrac{\textbf{Pr}[y|x_i]\textbf{Pr}[x_i]}{\textbf{Pr}[y]}\\
+& = \dfrac{\textbf{Pr}[\textbf{K} = K_i]\textbf{Pr}[x_i]}{\textbf{Pr}[y]}
+\end{align*}
+[$\because$ probability of getting $y$ given $x_i$ is equal to probability of using $K_i$ as key]
+
+Considering perfect secrecy, \textbf{Pr}$[x_i|y]$ = \textbf{Pr}$[x_i]$. From here, it follows that \textbf{Pr}$[K_i]$ = \textbf{Pr}$[y]$. for $1 \le i \le n$. This says that all keys are used with equal probability \textbf{Pr}$[y]$. But since number of keys is $|\mathcal{K}|$, we must have \textbf{Pr}$[K_i]$ = $\dfrac{1}{|\mathcal{K}|}$. \textbf{(Proved)}
+
+
+\end{large}
+
+\section{Perfect Secrecy?}
+\begin{large}
+
+One-time Pad, or OTP is a one-time key used to encrypt a message in Vernam Cipher. The problem with using an OTP more than once is as follows:\\
+Suppose our OTP is $K$. Let $m_1,m_2$ and $m_3$ be our messages. Then $c_1 = m_1 \oplus K$, $c_2 = m_2 \oplus K$ and $c_2 = m_3 \oplus K$. Now, if our attacker obtains even one pair of plaintext and ciphertext, the encryption is broken. Lets assume that $c_2$ and $m_2$ is obtained by attacker. Then attacker can simply XOR both of them to obtain the OTP.
+\begin{center}
+$m_2 \oplus c_2$ = $m_2 \oplus (m_2 \oplus K)$ = $K$.
+\end{center}
+Thus, this cipher becomes KPA-vulnerable if OTP is used more than once. \textbf{(Proved)}
+
+\end{large}
+
+\section{Hill Vs Permutation}
+\begin{large}
+Permutation cipher is a special form of Hill Cipher, i.e. the permutations can be represented by a key matrix consisting of 0's and 1's, 1 representing the position of the symbol in permutation. E.g.:\\
+Let message block size $m$ = 6, and a possible key is the permutation $\pi$:
+\begin{center}
+\begin{tabular}{c||c|c|c|c|c|c}
+$x$ & 1 & 2 & 3 & 4 & 5 & 6\\[0.05ex]\hline
+$\pi(x)$ & 3 & 5 & 1 & 6 & 4 & 2\\[0.05ex]
+\end{tabular}
+\end{center}
+Thus, $\pi$(ROHITDASXXXX) = HXDXRATXOSIX.\\
+This can be represented by a $6\times6$ key matrix $K$:\\
+\begin{center}
+\begingroup % keep the change local
+\setlength\arraycolsep{10pt}
+$K$ = $\begin{pmatrix}
+0&0&1&0&0&0\\
+0&0&0&0&1&0\\
+1&0&0&0&0&0\\
+0&0&0&0&0&1\\
+0&0&0&1&0&0\\
+0&1&0&0&0&0\\
+\end{pmatrix}$ 
+,i.e. $k_{i,j}$ 
+= $\begin{cases}
+1 \text{ if } j = \pi(i)\\
+0 \text{ otherwise}
+\end{cases}$\\
+\endgroup
+\end{center}
+Encryption of message $m$ = ROHITDASXXXX (18,15,8,9,20,4,1,19,24,24,24,24):\\
+$x$ = 
+$\begin{pmatrix}
+R&O&H&I&T&D\\
+A&S&X&X&X&X
+\end{pmatrix}$
+ = $\begin{pmatrix}
+18&15&8&9&20&4\\
+1&19&24&24&24&24
+\end{pmatrix}$ \\
+cipher text $y$ = $xK$
+= $\begin{pmatrix}
+18&15&8&9&20&4\\
+1&19&24&24&24&24
+\end{pmatrix}
+\begin{pmatrix}
+0&0&1&0&0&0\\
+0&0&0&0&1&0\\
+1&0&0&0&0&0\\
+0&0&0&0&0&1\\
+0&0&0&1&0&0\\
+0&1&0&0&0&0\\
+\end{pmatrix}
+\\=
+\begin{pmatrix}
+8&4&18&20&15&9\\
+24&24&1&24&19&24
+\end{pmatrix}$
+= 
+$\begin{pmatrix}
+H&D&R&T&O&I\\
+X&X&A&X&S&X
+\end{pmatrix}$ = HXDXRATXOSIX.
+
+\end{large}
+\end{document}
