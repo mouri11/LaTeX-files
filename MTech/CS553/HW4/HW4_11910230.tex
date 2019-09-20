@@ -112,8 +112,8 @@
 	
 \item \textbf{Square:}
 	\begin{itemize}[itemsep=-2ex, topsep=-2ex]
-	\item Block Size: 96 bits
-	\item Key Size: 96 bits
+	\item Block Size: 128 bits
+	\item Key Size: 128 bits
 	\item Precursor to AES.
 	\end{itemize}
 	
@@ -267,7 +267,7 @@ The formulas for the variables are as follows:\\
 $y_0 = \sum (2,5,8,9,10,11,13,14) = x_0x_1^{'} + x_1x_2^{'}x_3 + x_0x_2x_3^{'} + x_1^{'}x_2x_3^{'}$\\
 $y_1 = \sum (0,1,2,5,6,9,12,13) = x_2^{'}x_3 + x_0^{'}x_1^{'}x_2^{'} + x_0^{'}x_2x_3^{'} + x_0x_1x_2^{'}$\\
 $y_2 = \sum (4,5,6,10,12,13,14,15) = x_0x_1 + x_0^{'}x_1x_2^{'} + x_1x_2x_3^{'} + x_0x_2x_3^{'}$\\
-$y_3 = \sum (0,2,3,5,10,11,12,15) = x_1^{'}x_2 + x_0^{'}x_1^{'}x_3^{'} + x_0^{'}x_2x_3 + x_0^{'}x_1x_2^{'}x_3 + x_0x_1x_2^{'}x_3^{'}$\\
+$y_3 = \sum (0,2,3,5,10,11,12,15) = x_1^{'}x_2 + x_0^{'}x_1^{'}x_3^{'} + x_0x_2x_3 + x_0^{'}x_1x_2^{'}x_3 + x_0x_1x_2^{'}x_3^{'}$\\
 
 \end{large}
 \end{document}
