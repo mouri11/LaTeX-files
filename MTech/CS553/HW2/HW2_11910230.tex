@@ -46,17 +46,20 @@
 \begin{large}
 $r = 23$ (formed from $2nd$ and $3rd$ digits of roll number)\\
 $\therefore \mathbb{Z}^{+}_{23} = \{0,1,...,22\}$\\
-Let $K$ be the set of possible keys, such that $\forall	k \in K$, gcd($r,k$) $= 1$.\\
-So, given $r = 23$, $K = \{1,2,...,22\}$.\\
-$\mathbf{\therefore |K| = 22}$.
+Let $K = (a,b)$ be the set of possible keys, such that $\forall	k \in K$, gcd($r,a$) $= 1$.\\
+So, given $r = 23$, $a = \{1,2,...,22\}$. $\therefore |a| = 22$. Similarly, $b = \{0,1,...,22\}$. $\therefore |b| = 23$. $\mathbf{\therefore |K| = 22\times 23 = 506}$.
 \end{large}
 
 \section{Euler Phi Function}
 \begin{large}
 Euler Phi Function, also known as Euler's totient function, returns the count of integers less than and relatively prime to n. It is denoted by $\phi(n)$.\\
-For prime positive integers, $\phi(n) = (n - 1)$. For other positive integers, if $n = pq$, where p,q $\in \mathbb{Z}^{+}$ and prime, $\phi(n) = (p - 1)(q - 1)$.\\
+For prime positive integers, $\phi(n) = (n - 1)$. For other positive integers, if $n = pq$, where p,q $\in \mathbb{Z}^{+}$ and prime, $\phi(n) = (p - 1)(q - 1)$. In general, Euler's phi function can be written as:
+\begin{center}
+$\phi(n) = n\displaystyle\prod_{p|n}\left(1 - \dfrac{1}{p}\right)$
+\end{center}
+
 The number of keys, $|K|$, for an Affine Cipher defined over $\mathbb{Z}^{+}_{r}$ can be easily obtained by simply using Euler's totient function $\phi(r)$.\\
-Since our $r$ is prime, $\phi(r) = (r - 1) = 22$.
+Since our $r$ is prime, $\phi(r) = (r - 1) = 22$. Given $|b| = 23$, $\mathbf{|K| = 22 \times 23 = 506}$.
 \end{large}
 
 \section{Bijection}
