@@ -78,19 +78,23 @@ $\begin{pmatrix}
 $\therefore y = e_K(x)$ = VAXI.
 
 \subsection{Inverse Key}
-$|K|$ = $11\times7-3\times8$ mod 26 = 53 mod 26 = 1.\\
+$|K|$ = $(11\times7-3\times8)$ mod 26 = 53 mod 26 = 1.\\
 Adjoint of K
 = $\begin{pmatrix}
 7&-8\\-3&11
 \end{pmatrix}$.
 $\therefore K^{-1}$
-= $\dfrac{1}{|K|}\times$ Adjoint of K 
+= $\left( \dfrac{1}{|K|}\times \text{Adjoint of K} \right)$ mod 26
+ 
 =$\begin{pmatrix}
 7&-8\\-3&11
+\end{pmatrix}$ mod 26
+=$\begin{pmatrix}
+7&18\\23&11
 \end{pmatrix}$
 
 \subsection{Invertible?}
-K can be said to be invertible only if $|K| \ne$ 0. Since $|K|$ = 53 $\ne$ 0, K is invertible.
+K can be said to be invertible only if $|K| \ne$ 0 and $gcd(|K|,26) = 1$. Since $|K|$ = 53 $\ne$ 0 and $gcd(53,26) = 1$, K is invertible.
 
 \subsection{Decryption}
 We calculated y
@@ -102,14 +106,14 @@ $\therefore y$
 21&0\\23&8
 \end{pmatrix}
 \begin{pmatrix}
-7&-8\\-3&11
+7&18\\23&11
 \end{pmatrix}$
 =$\begin{pmatrix}
-21\times7+0\times(-3) & 21\times(-8)+0\times11\\
-23\times7+8\times(-3) & 23\times(-8)+8\times11
+21\times7+0\times23 & 21\times18+0\times11\\
+23\times7+8\times23 & 23\times18+8\times11
 \end{pmatrix}$mod 26\\
 = $\begin{pmatrix}
-147&-168\\137&-96
+147&378\\137&502
 \end{pmatrix}$ mod 26
 = $\begin{pmatrix}
 17&14\\7&8
