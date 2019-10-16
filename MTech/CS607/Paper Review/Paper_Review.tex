@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{0.96} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=15.5mm,bottom=18mm,left=12mm,
+right=12mm,columnsep=14pt]{geometry} % Document margins
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+%\usepackage{fancyhdr} % Headers and footers
+%\pagestyle{fancy} % All pages have headers and footers
+%\fancyhead{} % Blank out the default header
+%\fancyfoot{} % Blank out the default footer
+%\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+%\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{A Review of\\ IDSGAN: Generative Adversarial Networks for Attack Generation against Intrusion Detection} % Article title
+\author{%
+\Large \textsc{Rohit Das}\\ % Your name
+\large ID No.: 11910230\\
+\large M. Tech. (CSE)\\
+Reviewer: Dr. Sk Subidh Ali}
+\date{\today} % Leave empty to omit a date
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Summary}
+
+\lettrine[nindent=0em,lines=3]{T} he manuscript by Lin, Shi and Xue outlines how a Generative Adversarial Network (GAN) was developed to generate adversarial malicious network data and successfully evade any black-box intrusion detection system (IDS). The manuscript aims to fill a void in research into attacks on IDS, and particularly the use of GANs in such attacks. 
+
+%------------------------------------------------
+
+\section{Outline}
+
+Listed below are the milestones covered by the paper: 
+\begin{itemize}
+
+\item An overview of why IDSGAN is necessary to build robust intrusion detection systems, and highlights on the lack of work done in IDS evasion, specifically using GANs.
+
+\item A brief explanation of why Wasserstein GAN was preferred over other variants or the vanilla GAN, and outlines how the GAN architecture had been used to train the generator to generate adversarial data.
+
+\item Usage of a benchmark dataset, NSL-KDD, consisting of network data for both normal and malicious traffic, which had been divided to be separately fed into the black-box IDS and the GAN discriminator and generator.
+
+\item Visual representations of the modified architecture of Wasserstein GAN used for training the generator. It also specifies the layers used in the generator to add noise to the malicious data from the dataset.
+
+\item Detailed layout of the discriminator and generator, the role of a black-box IDS in helping to train the discriminator and eventually the generator to evade the black-box. Also provided are the training algorithms, pseudo code for the same, loss functions and formulae used.
+
+\item Extensive supporting data and graphs to throw light on how current IDSs are vulnerable to adversarial attacks and how the GAN framework developed was successful in evading most models used as a black-box.
+
+\end{itemize}
+
+%------------------------------------------------
+
+\section{Best Elements}
+Below mentioned are the best elements of the paper:
+\begin{itemize}
+
+\item The paper has been aimed to contribute to the field of intrusion detection and evasion, and has successfully presented that current IDSs are nowhere near being secure against adversarial attacks.
+
+\item All conclusions, facts and experiments have been well-supported with relevant data and graphs. The graphs clearly highlight how the IDSGAN was successful in evading all the models used for the black-box.
+
+\item Using the predicted output labels of the black-box as target labels for the discriminator in the Wasserstein GAN used was an innovative way to train the discriminator with parameters having values as close as possible to those of the black-box. This helped the generator to train and accordingly add noises to malicious examples that successfully evade the IDS.
+
+\item All equations, formulae and algorithms mentioned have been lucidly presented such that even with basic knowledge, the paper can be understood and appreciated.
+
+\end{itemize}
+%------------------------------------------------
+%
+\section{Limitations}
+The limitations of the paper are listed below:
+\begin{itemize}
+
+\item The paper has clearly not been proof-read adequately. It is filled with grammatical errors. Often the sentences are too garbled to make out the true meaning, and other times, some words have been morphed such that the actual meaning of the sentence changes.
+
+\item There are also informational errors, occurring while describing the values in NSL-KDD, errors in images and pseudo-code, which could have been avoided. Also, some parts of the text has been left in ambiguity.
+
+\item Since the dataset has less data under U2R and R2L categories of attacks, the paper's claim that the GAN has successfully evaded IDS with those attacks is trivial and weak.
+
+\end{itemize}
+%
+%-----------------------------------------------------------------------
+%
+\section{Opinion}
+~~~~~While the idea and solution presented here is novel and standard procedures for experiments and data representation have been used, the paper itself is of average quality filled with mistakes and errors, easily avoidable had it been proof-read properly.
+%
+%-----------------------------------------------------------------------
+
+\end{document}
