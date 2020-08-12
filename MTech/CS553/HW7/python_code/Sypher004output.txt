@@ -1,0 +1,44 @@
+Using Sypher004 encryption:
+----------------------------
+Mode: CFB
+IV used: 1234
+Encryption of msg: 1234abcd , using Sypher004 - CFB : 201689ff
+00100000000101101000100111111111
+Flipping 6th bit from the right:
+00100000000101101000100111011111
+Decryption of modified cipher: 
+00010010001101001010101011111100 <- 1234aafc
+00010010001101001010101111001101 <- Original message
+
+Mode: OFB
+IV used: 1234
+Encryption of msg: 1234abcd , using Sypher004 - OFB : 201699fe
+00100000000101101001100111111110
+Flipping 6th bit from the right:
+00100000000101101001100111011110
+Decryption of modified cipher: 
+00010010001101001010101111101101 <- 1234abed
+00010010001101001010101111001101 <- Original message
+
+Using Sypher004 decryption:
+----------------------------
+Mode: CFB
+IV used: 1234
+Encryption of msg: 1234abcd , using Sypher004 - CFB : 300799ee
+00110000000001111001100111101110
+Flipping 6th bit from the right:
+00110000000001111001100111001110
+Decryption of modified cipher: 
+00010011001101001010101011111101 <- 1334aafd
+00010010001101001010101111001101 <- Original message
+
+Mode: OFB
+IV used: 1234
+Encryption of msg: 1234abcd , using Sypher004 - OFB : 301698fe
+00110000000101101001100011111110
+Flipping 6th bit from the right:
+00110000000101101001100011011110
+Decryption of modified cipher: 
+00010010001101001010101111101101 <- 1234abed
+00010010001101001010101111001101 <- Original message
+

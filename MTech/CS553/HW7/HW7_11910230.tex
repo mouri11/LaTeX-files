@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, left = 1.5cm, right = 1.5cm, top = 1.5cm, bottom = 1.5cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{width=15cm,height=7cm,compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\usepackage{mathtools}
+
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+
+\usepackage{diagbox}
+
+\usepackage{karnaugh-map}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\usepackage{tabu}
+
+\lstset{
+	language = Python,
+	backgroundcolor=\color{black!5}, % set backgroundcolor
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\renewcommand\thesection{\arabic{section}.}
+
+\usepackage{tocloft}
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{\fill}
+\huge CS553: Cryptography\\
+\LARGE Assignment 7: Solutions\\
+\Large Rohit Das (11910230)\\\vspace{0.8cm}
+\today
+\vspace*{\fill}
+\end{titlepage}
+
+\section{Mix-Column Transitions}
+
+Python Code (Python3): AES.py
+\lstinputlisting[language=Python,showstringspaces=false]{./python_code/AES.py}
+\vspace{0.05cm}
+
+\newpage
+\section{Integral Distinguisher}
+
+Python Code (Python3): integral$\_$crypt.py
+\lstinputlisting[language=Python,showstringspaces=false]{./python_code/integral_crypt.py}
+\vspace{0.05cm}
+\textbf{Output:}
+Row: 1, Col: 1, Key: 1234
+\lstinputlisting[showstringspaces=false]{./python_code/integral_output.txt}
+
+\newpage
+\section{Fault Tolerance: Sypher004}
+
+Python Code (Python3): Sypher004.py
+\lstinputlisting[language=Python,showstringspaces=false]{./python_code/Sypher004.py}
+\vspace{0.05cm}
+Output:
+IV: 1234. Message: 1234abcd.
+\lstinputlisting[showstringspaces=false]{./python_code/Sypher004output.txt}
+\vspace{0.05cm}
+
+\newpage
+\section{Modes}
+
+\subsection{ECB Encryption}
+Bash Script File: enc$\_$pic.sh
+\lstinputlisting[language=Bash,showstringspaces=false]{./ECB_Pic/enc_pic.sh}
+\vspace{0.05cm}
+
+\begin{figure}[h!]
+
+\centering\includegraphics[width = 0.45\linewidth]{./ECB_Pic/IITBhilaiLogo.png}
+\centering\includegraphics[width = 0.45\linewidth]{./ECB_Pic/IITBhilaiLogoEnc.png}
+
+\caption{Left: Original IIT Bhilai Logo. Right: Encrypted using aes-256-cbc}
+
+\end{figure}
+
+\subsection{Need for Pre-IV}
+
+In CBC and CFB modes of encryption, being able to predict the IV will lead to leaking the message itself. To make the IV unpredictable, a notion of Pre-IV is used. It can be a nonce generated from a counter, which is then encrypted to create the IV.
+
+\begin{center}
+
+$IV = ENC_k$(PRE-IV)
+
+\end{center}
+Other theoretical works suggest using some key k' derived from k that is used for encryption.
+\begin{center}
+
+$IV = ENC_{k'}$(PRE-IV)
+
+\end{center}
+
+\begin{large}
+
+\end{large}
+
+\end{document}

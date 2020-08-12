@@ -1,0 +1,68 @@
+Round 0 AddKey:
+[['C' 'C' 'C' 'C']
+ ['C' 'A' 'C' 'C']
+ ['C' 'C' 'C' 'C']
+ ['C' 'C' 'C' 'C']]
+Round 1 :
+After subBytes :
+[['C' 'C' 'C' 'C']
+ ['C' 'A' 'C' 'C']
+ ['C' 'C' 'C' 'C']
+ ['C' 'C' 'C' 'C']]
+After shiftRows :
+[['C' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']
+ ['C' 'C' 'C' 'C']
+ ['C' 'C' 'C' 'C']]
+After mixColumns :
+[['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']]
+After addKey :
+[['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']]
+Round 2 :
+After subBytes :
+[['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']
+ ['A' 'C' 'C' 'C']]
+After shiftRows :
+[['A' 'C' 'C' 'C']
+ ['C' 'C' 'C' 'A']
+ ['C' 'C' 'A' 'C']
+ ['C' 'A' 'C' 'C']]
+After mixColumns :
+[['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']]
+After addKey :
+[['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']]
+Round 3 :
+After subBytes :
+[['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']]
+After shiftRows :
+[['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']
+ ['A' 'A' 'A' 'A']]
+After mixColumns :
+[['B' 'B' 'B' 'B']
+ ['B' 'B' 'B' 'B']
+ ['B' 'B' 'B' 'B']
+ ['B' 'B' 'B' 'B']]
+After addKey :
+[['B' 'B' 'B' 'B']
+ ['B' 'B' 'B' 'B']
+ ['B' 'B' 'B' 'B']
+ ['B' 'B' 'B' 'B']]
